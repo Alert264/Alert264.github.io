@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Alert Wang&#39;s blog</title>
+  
+  <subtitle>学习+记录</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-06-06T11:18:20.785Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Alert Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WSL安装</title>
+    <link href="http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/</id>
+    <published>2020-06-06T10:26:30.243Z</published>
+    <updated>2020-06-06T11:18:20.785Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="在Win10的wsl环境下安装Linux"><a href="#在Win10的wsl环境下安装Linux" class="headerlink" title="在Win10的wsl环境下安装Linux"></a>在Win10的wsl环境下安装Linux</h1><h2 id="一、开启WSL"><a href="#一、开启WSL" class="headerlink" title="一、开启WSL"></a>一、开启WSL</h2><p>在 <strong>控制面板</strong>-&gt;<strong>程序</strong>-&gt;<strong>程序和功能</strong> 中点击 <strong>启动或关闭Windows</strong>功能如图</p><p><img src="/images/WSL_01.png" alt="WSL_01"></p><p>勾选 <strong>适用于Linux的Windows子系统</strong></p><p><img src="/images/WSL_02.png" alt="WSL_01"></p><h2 id="二、安装linux"><a href="#二、安装linux" class="headerlink" title="二、安装linux"></a>二、安装linux</h2><h3 id="一、直接安装应用商店的Ubuntu"><a href="#一、直接安装应用商店的Ubuntu" class="headerlink" title="一、直接安装应用商店的Ubuntu"></a>一、直接安装应用商店的Ubuntu</h3><p>在应用商店搜索linux，选择合适的版本下载即可</p><p>（比较简单,不过貌似是只有Ubuntu，而且安装位置不能自己选择）</p><p><img src="/images/WSL_03.png" alt="WSL_02"></p><h3 id="二、使用LxRunOffline安装"><a href="#二、使用LxRunOffline安装" class="headerlink" title="二、使用LxRunOffline安装"></a>二、使用LxRunOffline安装</h3><h4 id="一、下载LXRunOffline"><a href="#一、下载LXRunOffline" class="headerlink" title="一、下载LXRunOffline"></a>一、下载LXRunOffline</h4><p><a href="/download/LxRunOffline-v3.4.0.zip">LxRunOffline-v3.4.0.zip</a></p><p>新建文件夹LXRunOffline，下载减压到该文件夹下</p><p>LXRunOffline的方便之处：</p><ul><li>Install any Linux distro to any directory on your computer.</li><li>Move an existing installation to another directory.</li><li>Duplicate(copy) an existing installation.</li><li>Register an existing installation directory. This enables you to install to a USB stick and use it on different computers.</li><li>Run arbitrary Linux commands in a specified installation.</li><li>Configure default user, environment variables and various flags.</li><li>Export configuration to an XML file and import from the file.</li><li>Export an installation to a tar file.<h4 id="二、下载Linux镜像文件"><a href="#二、下载Linux镜像文件" class="headerlink" title="二、下载Linux镜像文件"></a>二、下载Linux镜像文件</h4><a href="/download/CentOS7.zip">CentOS7.zip</a></li></ul><p>这个是CentOS7的镜像文件，也可以自己找其他镜像文件</p><h4 id="三、使用LXRunOffline部署Linux到WSL"><a href="#三、使用LXRunOffline部署Linux到WSL" class="headerlink" title="三、使用LXRunOffline部署Linux到WSL"></a>三、使用LXRunOffline部署Linux到WSL</h4><p>使用管理员权限打开cmd，cd到刚刚减压LXRunOffline的文件夹，执行下面的命令</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline.exe  install -n centos -d E:\ProgramData\Microsoft\Windows\WSL\CentOS -f  E:\Progra</span><br><span class="line">mData\Microsoft\Windows\WSL\centos<span class="number">-7</span>-docker.tar.xz</span><br></pre></td></tr></table></figure><p>其中 -d 后面是要安装到的目录，-f 是前面下载的镜像， -n 用来指定名称。</p><h4 id="四、启动linux"><a href="#四、启动linux" class="headerlink" title="四、启动linux"></a>四、启动linux</h4><p>然后使用  LxRunOffine 来开启 Centos</p><p>执行 <code>LxRunOffline  run  -n centos</code> </p><p>如果想在任何位置使用LXRunOffline，只需要把该文件夹加入环境变量就行。</p><p>参考<a href="https://blog.csdn.net/qq_18286031/article/details/102931794" target="_blank" rel="noopener">链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;在Win10的wsl环境下安装Linux&quot;&gt;&lt;a href=&quot;#在Win10的wsl环境下安装Linux&quot; class=&quot;headerlink&quot; title=&quot;在Win10的wsl环境下安装Linux&quot;&gt;&lt;/a&gt;在Win10的wsl环境下安装Linux&lt;/h1&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo基本操作</title>
+    <link href="http://yoursite.com/2020/06/06/hello-world/"/>
+    <id>http://yoursite.com/2020/06/06/hello-world/</id>
+    <published>2020-06-05T16:00:00.000Z</published>
+    <updated>2020-06-06T12:15:27.888Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+      <category term="初学Hexo" scheme="http://yoursite.com/categories/%E5%88%9D%E5%AD%A6Hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
