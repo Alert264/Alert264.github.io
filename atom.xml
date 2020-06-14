@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-08T16:15:55.798Z</updated>
+  <updated>2020-06-14T12:42:57.081Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,24 +17,55 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>WSL安装</title>
-    <link href="http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/"/>
-    <id>http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/</id>
-    <published>2020-06-06T10:26:30.243Z</published>
-    <updated>2020-06-08T16:15:55.798Z</updated>
+    <title>Linux常用命令</title>
+    <link href="http://yoursite.com/2020/06/14/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2020/06/14/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-06-14T12:27:07.000Z</published>
+    <updated>2020-06-14T12:42:57.081Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="在Win10的wsl环境下安装Linux"><a href="#在Win10的wsl环境下安装Linux" class="headerlink" title="在Win10的wsl环境下安装Linux"></a>在Win10的wsl环境下安装Linux</h1><h2 id="一、开启WSL"><a href="#一、开启WSL" class="headerlink" title="一、开启WSL"></a>一、开启WSL</h2><p>在 <strong>控制面板</strong>-&gt;<strong>程序</strong>-&gt;<strong>程序和功能</strong> 中点击 <strong>启动或关闭Windows</strong>功能如图</p><p><img src="/images/WSL_01.png" alt="WSL_01"></p><p>勾选 <strong>适用于Linux的Windows子系统</strong></p><p><img src="/images/WSL_02.png" alt="WSL_01"></p><h2 id="二、安装linux"><a href="#二、安装linux" class="headerlink" title="二、安装linux"></a>二、安装linux</h2><h3 id="一、直接安装应用商店的Ubuntu"><a href="#一、直接安装应用商店的Ubuntu" class="headerlink" title="一、直接安装应用商店的Ubuntu"></a>一、直接安装应用商店的Ubuntu</h3><p>在应用商店搜索linux，选择合适的版本下载即可</p><p>（比较简单,不过貌似是只有Ubuntu，而且安装位置不能自己选择）</p><p><img src="/images/WSL_03.png" alt="WSL_02"></p><h3 id="二、使用LxRunOffline安装"><a href="#二、使用LxRunOffline安装" class="headerlink" title="二、使用LxRunOffline安装"></a>二、使用LxRunOffline安装</h3><h4 id="一、下载LXRunOffline"><a href="#一、下载LXRunOffline" class="headerlink" title="一、下载LXRunOffline"></a>一、下载LXRunOffline</h4><p><a href="/download/LxRunOffline-v3.4.0.zip">LxRunOffline-v3.4.0.zip</a></p><p>新建文件夹LXRunOffline，下载减压到该文件夹下</p><p>LXRunOffline的方便之处：</p><ul><li>Install any Linux distro to any directory on your computer.</li><li>Move an existing installation to another directory.</li><li>Duplicate(copy) an existing installation.</li><li>Register an existing installation directory. This enables you to install to a USB stick and use it on different computers.</li><li>Run arbitrary Linux commands in a specified installation.</li><li>Configure default user, environment variables and various flags.</li><li>Export configuration to an XML file and import from the file.</li><li>Export an installation to a tar file.</li></ul><h4 id="二、下载Linux镜像文件"><a href="#二、下载Linux镜像文件" class="headerlink" title="二、下载Linux镜像文件"></a>二、下载Linux镜像文件</h4><p><a href="/download/CentOS7.zip">CentOS7.zip</a></p><p>这个是CentOS7的镜像文件，也可以自己找其他镜像文件</p><h4 id="三、使用LXRunOffline部署Linux到WSL"><a href="#三、使用LXRunOffline部署Linux到WSL" class="headerlink" title="三、使用LXRunOffline部署Linux到WSL"></a>三、使用LXRunOffline部署Linux到WSL</h4><p>使用管理员权限打开cmd，cd到刚刚减压LXRunOffline的文件夹，执行下面的命令</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline.exe  install -n centos -d E:\ProgramData\Microsoft\Windows\WSL\CentOS -f  E:\Progra</span><br><span class="line">mData\Microsoft\Windows\WSL\centos<span class="number">-7</span>-docker.tar.xz</span><br></pre></td></tr></table></figure><p>其中 -d 后面是要安装到的目录，-f 是前面下载的镜像， -n 用来指定名称。</p><h4 id="四、启动linux"><a href="#四、启动linux" class="headerlink" title="四、启动linux"></a>四、启动linux</h4><p>然后使用  LxRunOffine 来开启 Centos</p><p>执行 <code>LxRunOffline  run  -n centos</code> </p><p>如果想在任何位置使用LXRunOffline，只需要把该文件夹加入环境变量就行。</p><p>参考<a href="https://blog.csdn.net/qq_18286031/article/details/102931794" target="_blank" rel="noopener">链接</a></p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/Linux_01.png" alt="img_1"></p><h3 id="一、基本命令"><a href="#一、基本命令" class="headerlink" title="一、基本命令"></a>一、基本命令</h3><h4 id="1-用户操作"><a href="#1-用户操作" class="headerlink" title="1. 用户操作"></a>1. 用户操作</h4><p># 表示权限用户(如:root),$ 表示普通用户<br>开机提示:Login:输入用户名<br>password:输入口令 用户是系统注册用户成功登陆后，可以进入相应的用户环境.<br>退出当前shell,输入:exit</p><p>useradd netseek 添加一个netseek用户<br>passwd netseek 给netseek这个用户设置密码.<br>(/etc/passwd /etc/group)<br>userdel netseek 删除账号<br>userdel -r netseek 删除账号连同自家目录</p><h4 id="2-设置linux时间和日期"><a href="#2-设置linux时间和日期" class="headerlink" title="2. 设置linux时间和日期"></a>2. 设置linux时间和日期</h4><p>date 命令(“date MMDDhhmmYYYY.ss”)<br>2006年7月24日12:37 ,30秒<br>date 072412372006.30<br>date -s 20:30:30 #设置系统时间为20: 30:30<br>date -s 2006-7-24 #设置系统时期为2006-7-24<br>clock -r #对系统Bios中读取时间参数<br>clock -w #将系统时间(如由date设置的时间)写入Bios</p><h3 id="二、文件-文件夹操作"><a href="#二、文件-文件夹操作" class="headerlink" title="二、文件/文件夹操作"></a>二、文件/文件夹操作</h3><h4 id="1-查看操作"><a href="#1-查看操作" class="headerlink" title="1. 查看操作"></a>1. 查看操作</h4><p>ls -l 显示文件列表<br>ls -al -a 显示所有档案及目录 (ls内定将档案名或目录名称开头为”.”的视为隐藏档，不会列出)<br>ls -al |grep ‘^d’ 显示目录<br>ls -al |grep ‘^[^d]’ 在一个目录中查询不包含目录的所有文件<br>ls -sh (man ls 查看man帮助.)</p><h4 id="2-linux几种文件类型"><a href="#2-linux几种文件类型" class="headerlink" title="2. linux几种文件类型:"></a>2. linux几种文件类型:</h4><p>d 表示此文件是一个目录<br>- 表示此文件是一个普通文件<br>b 表示此文件是一个特殊的块设备I/O文件<br>c 表示此文件是一个特殊的字符设备I/O文件<br>l 表示此文件是一个连接文件。在其文件名称后紧跟与它连接的文件路径及名称</p><h4 id="3-建立文件和目录"><a href="#3-建立文件和目录" class="headerlink" title="3. 建立文件和目录"></a>3. 建立文件和目录</h4><p>touch 1.txt<br>cat &gt; 2.txt (用定向符创建文件，填写内容后，按ctrl+d保存内容)<br>mkdir mywork 建立mywork这个目录</p><h4 id="4-拷贝文件或目录"><a href="#4-拷贝文件或目录" class="headerlink" title="4. 拷贝文件或目录"></a>4. 拷贝文件或目录</h4><p>cp filename1 filename2<br>cp -r dir1 dir2 复制目录<br>cp -rf 参数f是删除已经存在的目标文件而不提示<br>cp -i 参数i和f相反，在覆盖目标文件之前将给出提示要求用户确认，回答y时目标文件将被覆盖，是交互式拷贝.</p><h4 id="5-删除文件和目录-删除文件或目录都可以用rm搞定"><a href="#5-删除文件和目录-删除文件或目录都可以用rm搞定" class="headerlink" title="5. 删除文件和目录(删除文件或目录都可以用rm搞定)"></a>5. 删除文件和目录(删除文件或目录都可以用rm搞定)</h4><p>rm 1.c //将1.c这个文件删除<br>rm -rf (强制删除文件或目录,删除时不提示.)</p><h4 id="6-移走目录或者改文件名"><a href="#6-移走目录或者改文件名" class="headerlink" title="6. 移走目录或者改文件名"></a>6. 移走目录或者改文件名</h4><p>mv [opitons] 源文件或目录 目标文件或目录<br>[options]主要参数<br>-i:交互方式操作，如果mv操作将导致对已存在的目标文件的覆盖，此时系统询问是否重写，要求用户回答“y”或“n”，<br>这样可以避免误覆盖文件.<br>-f:禁止交互操作。mv操作要覆盖某个已有的目标文件时不给任何指示，指定此参数后i参数将不再起作用。<br>mv hello ../ 将hello目录或者文件移动上一级.</p><h4 id="7-alias-别名"><a href="#7-alias-别名" class="headerlink" title="7. alias 别名"></a>7. alias 别名</h4><p>alias dir=’ls -l’ 输入dir，其实就相当于执行了ls -l</p><h4 id="8-改变当前目录"><a href="#8-改变当前目录" class="headerlink" title="8. 改变当前目录"></a>8. 改变当前目录</h4><p>cd filename 进入 filename 这个目录<br>cd 退出当前目录<br>cd ../ 进入上一级目录.<br>cd - 返回上一次目录<br>cd ~ 返回主目录</p><h4 id="9-cat-more-less-命令"><a href="#9-cat-more-less-命令" class="headerlink" title="9. cat,more,less 命令"></a>9. cat,more,less 命令</h4><p>将某个文件的内容显示出来，<br>三个命令不同的是:cat 把文件内容一直打印出来，而more则分展显示，less 可以上下翻滚查看内容.<br>cat &gt; 1.txt 可以填写或者复制内容,按ctrl+d保存<br>cat 1.c<br>more 1.c<br>head -n filename 显示第N行的内容<br>tail -n filename 显示后N行的内容<br>tail -n /var/log/message 显示最新的20行日志</p><p>未完待续。。。<br><a href="https://zhuanlan.zhihu.com/p/24953800" target="_blank" rel="noopener">参考网址</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;在Win10的wsl环境下安装Linux&quot;&gt;&lt;a href=&quot;#在Win10的wsl环境下安装Linux&quot; class=&quot;headerlink&quot; title=&quot;在Win10的wsl环境下安装Linux&quot;&gt;&lt;/a&gt;在Win10的wsl环境下安装Linux&lt;/h1&gt;&lt;
+        &lt;p&gt;&lt;img src=&quot;/images/Linux_01.png&quot; alt=&quot;img_1&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一、基本命令&quot;&gt;&lt;a href=&quot;#一、基本命令&quot; class=&quot;headerlink&quot; title=&quot;一、基本命令&quot;&gt;&lt;/a&gt;一、基本命令&lt;/h3&gt;&lt;h4 i
       
     
     </summary>
     
     
+      <category term="日常学习记录" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WSL安装</title>
+    <link href="http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2020/06/06/WSL%E5%AE%89%E8%A3%85/</id>
+    <published>2020-06-06T05:57:07.000Z</published>
+    <updated>2020-06-14T12:33:10.229Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、开启WSL"><a href="#一、开启WSL" class="headerlink" title="一、开启WSL"></a>一、开启WSL</h2><p>在 <strong>控制面板</strong>-&gt;<strong>程序</strong>-&gt;<strong>程序和功能</strong> 中点击 <strong>启动或关闭Windows</strong>功能如图</p><p><img src="/images/WSL_01.png" alt="WSL_01"></p><p>勾选 <strong>适用于Linux的Windows子系统</strong></p><p><img src="/images/WSL_02.png" alt="WSL_01"></p><h2 id="二、安装linux"><a href="#二、安装linux" class="headerlink" title="二、安装linux"></a>二、安装linux</h2><h3 id="一、直接安装应用商店的Ubuntu"><a href="#一、直接安装应用商店的Ubuntu" class="headerlink" title="一、直接安装应用商店的Ubuntu"></a>一、直接安装应用商店的Ubuntu</h3><p>在应用商店搜索linux，选择合适的版本下载即可</p><p>（比较简单,不过貌似是只有Ubuntu，而且安装位置不能自己选择）</p><p><img src="/images/WSL_03.png" alt="WSL_02"></p><h3 id="二、使用LxRunOffline安装"><a href="#二、使用LxRunOffline安装" class="headerlink" title="二、使用LxRunOffline安装"></a>二、使用LxRunOffline安装</h3><h4 id="一、下载LXRunOffline"><a href="#一、下载LXRunOffline" class="headerlink" title="一、下载LXRunOffline"></a>一、下载LXRunOffline</h4><p><a href="/download/LxRunOffline-v3.4.0.zip">LxRunOffline-v3.4.0.zip</a></p><p>新建文件夹LXRunOffline，下载减压到该文件夹下</p><p>LXRunOffline的方便之处：</p><ul><li>Install any Linux distro to any directory on your computer.</li><li>Move an existing installation to another directory.</li><li>Duplicate(copy) an existing installation.</li><li>Register an existing installation directory. This enables you to install to a USB stick and use it on different computers.</li><li>Run arbitrary Linux commands in a specified installation.</li><li>Configure default user, environment variables and various flags.</li><li>Export configuration to an XML file and import from the file.</li><li>Export an installation to a tar file.</li></ul><h4 id="二、下载Linux镜像文件"><a href="#二、下载Linux镜像文件" class="headerlink" title="二、下载Linux镜像文件"></a>二、下载Linux镜像文件</h4><p><a href="/download/CentOS7.zip">CentOS7.zip</a></p><p>这个是CentOS7的镜像文件，也可以自己找其他镜像文件</p><h4 id="三、使用LXRunOffline部署Linux到WSL"><a href="#三、使用LXRunOffline部署Linux到WSL" class="headerlink" title="三、使用LXRunOffline部署Linux到WSL"></a>三、使用LXRunOffline部署Linux到WSL</h4><p>使用管理员权限打开cmd，cd到刚刚减压LXRunOffline的文件夹，执行下面的命令</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline.exe  install -n centos -d E:\ProgramData\Microsoft\Windows\WSL\CentOS -f  E:\Progra</span><br><span class="line">mData\Microsoft\Windows\WSL\centos<span class="number">-7</span>-docker.tar.xz</span><br></pre></td></tr></table></figure><p>其中 -d 后面是要安装到的目录，-f 是前面下载的镜像， -n 用来指定名称。</p><h4 id="四、启动linux"><a href="#四、启动linux" class="headerlink" title="四、启动linux"></a>四、启动linux</h4><p>然后使用  LxRunOffine 来开启 Centos</p><p>执行 <code>LxRunOffline  run  -n centos</code> </p><p>如果想在任何位置使用LXRunOffline，只需要把该文件夹加入环境变量就行。</p><p>参考<a href="https://blog.csdn.net/qq_18286031/article/details/102931794" target="_blank" rel="noopener">链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一、开启WSL&quot;&gt;&lt;a href=&quot;#一、开启WSL&quot; class=&quot;headerlink&quot; title=&quot;一、开启WSL&quot;&gt;&lt;/a&gt;一、开启WSL&lt;/h2&gt;&lt;p&gt;在 &lt;strong&gt;控制面板&lt;/strong&gt;-&amp;gt;&lt;strong&gt;程序&lt;/strong&gt;-&amp;g
+      
+    
+    </summary>
+    
+    
+      <category term="日常学习记录" scheme="http://yoursite.com/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
   </entry>
   
