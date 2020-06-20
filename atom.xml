@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-14T12:42:57.081Z</updated>
+  <updated>2020-06-20T12:47:20.844Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>知识点概览</title>
+    <link href="http://yoursite.com/2020/06/20/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A6%82%E8%A7%88/"/>
+    <id>http://yoursite.com/2020/06/20/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A6%82%E8%A7%88/</id>
+    <published>2020-06-20T12:46:02.000Z</published>
+    <updated>2020-06-20T12:47:20.844Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><ul><li><p>顺序、选择、循环</p></li><li><p>文件读写</p></li><li><p>String</p></li><li><p>ArrayList</p></li><li><p>数据建模、算法建模</p></li><li><p>递归、高阶函数</p></li><li><p>Register machine</p></li><li><p>Lambda演算</p></li><li><p>程序正确性验证（不考）</p></li><li><p>软件开发生命周期</p></li><li><p>结构化方法和面向对象方法</p></li><li><p>整数、浮点数操作</p></li><li><p>Overriding Vs Overloading</p></li><li><p>封装</p></li><li><p>职责、协作</p></li><li><p>类之间的关系</p></li><li><p>继承</p></li><li><p>多态</p></li><li><p>继承vs组合</p></li><li><p>类的初始化</p></li><li><p>接口</p></li><li><p>针对接口编程</p></li><li><p>可修改性</p></li><li><p>异常</p></li><li><p>GUI控件、布局、事件响应</p></li><li><p>网络、线程、synchronize</p></li><li><p>Java字节码解析</p></li><li><p>Jvm指令的执行</p></li></ul><h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><ul><li><h4 id="结构化编程"><a href="#结构化编程" class="headerlink" title="结构化编程"></a>结构化编程</h4><ul><li>自顶向下逐步求精</li><li>树状结构</li><li>数据流图</li><li>结构图</li></ul></li><li><h4 id="单个类封装"><a href="#单个类封装" class="headerlink" title="单个类封装"></a>单个类封装</h4><ul><li>数据和行为的在一起</li><li>单一职责</li></ul></li><li><h4 id="多个类封装"><a href="#多个类封装" class="headerlink" title="多个类封装"></a>多个类封装</h4><ul><li>委托</li><li>职责的分配</li></ul></li><li><h4 id="可修改性"><a href="#可修改性" class="headerlink" title="可修改性"></a>可修改性</h4><ul><li>实现的修改（封装）</li><li>扩展（继承，多态）</li><li>灵活性（组合+接口）</li></ul></li></ul><h3 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h3><ul><li>lambda演算主要考推演过程</li><li>高阶函数主要考思想，不在乎具体语言</li><li>用例图、数据流图、结构图、类图会考，标准UML</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;知识点：&quot;&gt;&lt;a href=&quot;#知识点：&quot; class=&quot;headerlink&quot; title=&quot;知识点：&quot;&gt;&lt;/a&gt;知识点：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;顺序、选择、循环&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;文件读写&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Strin
+      
+    
+    </summary>
+    
+    
+      <category term="软工一笔记" scheme="http://yoursite.com/categories/%E8%BD%AF%E5%B7%A5%E4%B8%80%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="JVM" scheme="http://yoursite.com/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux常用命令</title>
