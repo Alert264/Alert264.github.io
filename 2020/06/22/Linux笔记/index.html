@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2a901bf3"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/firewall_32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/firewall_16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alert Wang's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、Linux系统的组成1.内核​        内核是操作系统的核心，具有很多最基本的功能，如虚拟内存、多任务、共享库、需求加载、可执行程序和TCP&#x2F;IP网络功能。 ​        Linux内核的主要模块分为存储管理、CPU和进程管理、文件系统、设备管理和驱动、网络通信、系统的初始化和系统调用等几个部分， 2.Shell​        Shell是系统的用户界面，提供了用户与内核进行交互操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记">
+<meta property="og:url" content="http://yoursite.com/2020/06/22/Linux%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Alert Wang&#39;s blog">
+<meta property="og:description" content="一、Linux系统的组成1.内核​        内核是操作系统的核心，具有很多最基本的功能，如虚拟内存、多任务、共享库、需求加载、可执行程序和TCP&#x2F;IP网络功能。 ​        Linux内核的主要模块分为存储管理、CPU和进程管理、文件系统、设备管理和驱动、网络通信、系统的初始化和系统调用等几个部分， 2.Shell​        Shell是系统的用户界面，提供了用户与内核进行交互操">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-22T03:16:28.000Z">
+<meta property="article:modified_time" content="2020-07-19T09:43:17.621Z">
+<meta property="article:author" content="Alert Wang">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/06/22/Linux笔记/"/>
+
+
+
+
+
+  <title>Linux笔记 | Alert Wang's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/Alert264" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alert Wang's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习+记录</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/22/Linux%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alert Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alert Wang's blog">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux笔记</h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-22T11:16:28+08:00">
+                2020-06-22
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/22/Linux%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/22/Linux%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+    
+          
+          
+             <span id="/2020/06/22/Linux%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Linux笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        <h2 id="一、Linux系统的组成"><a href="#一、Linux系统的组成" class="headerlink" title="一、Linux系统的组成"></a>一、Linux系统的组成</h2><h4 id="1-内核"><a href="#1-内核" class="headerlink" title="1.内核"></a>1.内核</h4><p>​        内核是操作系统的核心，具有很多最基本的功能，如虚拟内存、多任务、共享库、需求加载、可执行程序和TCP/IP网络功能。</p>
+<p>​        Linux内核的主要模块分为存储管理、CPU和进程管理、文件系统、设备管理和驱动、网络通信、系统的初始化和系统调用等几个部分，</p>
+<h4 id="2-Shell"><a href="#2-Shell" class="headerlink" title="2.Shell"></a>2.Shell</h4><p>​        Shell是系统的用户界面，提供了用户与内核进行交互操作的一种接口。它接收用户输入的命令并把它送入内核去执行。</p>
+<p>​        实际上，Shell是一个命令解释器，它解释由用户输入的命令并且将它们送到内核</p>
+<p>​        另外，Shell编 程语言具有普通编程语言的很多特点，用这种编程语言编写的Shell程序与其他应用程序具有同样的效果。</p>
+<h4 id="3-文件系统"><a href="#3-文件系统" class="headerlink" title="3.文件系统"></a>3.文件系统</h4><p>​        文件系统是文件存放在磁盘等存储设备上的组织方法。Linux系统能支持多种目前流行的文件系统，如xfs、ext4、ext3、ext2、msdos、vfat 和iso9660等。</p>
+<h4 id="4-应用程序"><a href="#4-应用程序" class="headerlink" title="4.应用程序"></a>4.应用程序</h4><p>​        标准的Linux系统都有一套称为应用程序的程序集，它包括文本编辑器、编程语言、X Window、办公软件、影音软件、Internet工具和数据库等。</p>
+<h2 id="二、安装Linux系统"><a href="#二、安装Linux系统" class="headerlink" title="二、安装Linux系统"></a>二、安装Linux系统</h2><h4 id="1-准备安装Linux系统"><a href="#1-准备安装Linux系统" class="headerlink" title="1.准备安装Linux系统"></a>1.准备安装Linux系统</h4><h4 id="2-安装Linux系统"><a href="#2-安装Linux系统" class="headerlink" title="2.安装Linux系统"></a>2.安装Linux系统</h4><p><strong>硬盘分区规划（1）</strong><br>（1）最简单的分区规划</p>
+<ul>
+<li>swap分区：即交换分区，实现虚拟内存，建议大小是物理内存的1~2倍；</li>
+<li>/boot分区：用来存放与Linux系统启动有关的程序，比如引导装载程序等，最少200MB；</li>
+<li>/分区：建议大小至少在10GB以上。</li>
+</ul>
+<p><strong>硬盘分区规划（2）</strong><br>（2）合理的分区规划</p>
+<ul>
+<li>swap分区：实现虚拟内存，建议大小是物理内存的1~2倍；</li>
+<li>/boot分区：建议大小最少为200MB：</li>
+<li>/usr分区：用来存放Linux系统中的应用程序，其相关数据较多，建议大小最少为8GB；</li>
+<li>/var分区：用来存放Linux系统中经常变化的数据以及日志文件，建议大小最少为1GB；</li>
+<li>/分区：Linux 系统的根目录，所有的目录都挂在这个目录下面，建议大小最少为1GB；</li>
+<li>/home分区：存放普通用户的数据，是普通用户的宿主目录，建议大小为剩下的空间。</li>
+</ul>
+<p><strong>交换分区</strong></p>
+<ul>
+<li>直接从物理内存读写数据要比从硬盘读写数据快的多，而物理内存是有限的，这样就使用到了虚拟内存。虚拟内存是为了满足物理内存的不足而提出的一.种策略，它是利用磁盘空间虚拟出的一-块逻辑内存，用作虚拟内存的磁盘空间被称为交换分区（swap分区）。</li>
+<li>内核会将暂时不用的内存块信息写到交换分区，这样-来，物理内存得到了释放，这块内存就可以用于其它用途，当需要用到原始的内容时，这些信息会被重新从交换分区读入物理内存。</li>
+<li>Linux的内存管理采取的是分页存取机制，为了保证物理内存能得到充分的利用，内核会在适当的时候将物理内存中不经常使用的数据块自动交换到虚拟内存中，而将经常使用的信息保留到物理内存。</li>
+</ul>
+<p><strong>分区命名方案</strong></p>
+<ul>
+<li>Linux系统使用字母和数字的组合来指代硬盘分区，使用一种更加灵活的分区命名方案，该命名方案是基于文件的，文件名的格式为/dev/xxyN（比如/dev/sda1分区）。<ul>
+<li>/dev：这是Linux系统中所有设备文件所在的目录名。因为分区位于硬盘上，而硬盘是设备，所以这些文件代表了在/dev_上所有可能的分区；</li>
+<li>XX：分区名的前两个字母表示分区所在设备的类型，通常是hd（IDE硬盘）或sd（SCSI硬盘）。</li>
+<li>y: 这个字母表示分区所在的设备。例如，/dev/hda（第1个IDE硬盘）或/dev/sdb（第2个SCSI硬盘）；</li>
+<li>N：最后的数字N代表分区。前4个分区（主分区或扩展分区）用数字1~4表示，逻辑驱动器从5开始。例如，<br>/dev/hda3是第1个IDE硬盘上的第3个主分区或扩展分区；<br>/dev/sdb6是第2个SCSI硬盘上的第2个逻辑驱动器。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-注销、关闭和重启Linux系统"><a href="#3-注销、关闭和重启Linux系统" class="headerlink" title="3.注销、关闭和重启Linux系统"></a>3.注销、关闭和重启Linux系统</h4><h4 id="4-FirewallD防火墙"><a href="#4-FirewallD防火墙" class="headerlink" title="4.FirewallD防火墙"></a>4.FirewallD防火墙</h4><h2 id="三、字符界面操作基础"><a href="#三、字符界面操作基础" class="headerlink" title="三、字符界面操作基础"></a>三、字符界面操作基础</h2><h4 id="1-字符界面简介"><a href="#1-字符界面简介" class="headerlink" title="1.字符界面简介"></a>1.字符界面简介</h4><p><strong>进入Linux字符界面方式</strong></p>
+<ul>
+<li>要进入Linux系统的字符界面可以通过字符界面、图形界面下的终端以及虚拟控制台等多种方式进入。</li>
+</ul>
+<p><strong>1、Linux字符界面</strong></p>
+<ul>
+<li><p>安装Linux系统之后，系统启动默认进入的是图形化界面，可以通过使用以下命令修改为进入字符界面，所做改变在系统重新引导之后即可生效。<br><code>[root@rhel ~]#systemctl get-default</code> </p>
+<p><code>graphical.target</code><br>//查看计算机系统启动后要进入的默认目标，graphical.target表示图形化界面<br><code>[root@rhel ~]#systemctl set-default multi-user.target</code><br>//将multi-user.target目标设置为启动计算机系统后要进入的默认目标，multi-user.target表示字符界面</p>
+</li>
+</ul>
+<p><strong>2、字符界面登录提示</strong></p>
+<ul>
+<li>Linux系统用户登录分两步：第一步输入用户的用户名，系统根据该用户名识别用户；第二步输入用户的口令。当用户正确地输入用户名和口令后，就能合法地进入系统，这时就可以对系统进行各种操作了，注意：<br>超级用户root登录后提示符是”#”，而其他用户登录后提示符是”$”</li>
+</ul>
+<p><strong>3、图形界面下的终端</strong></p>
+<p><strong>4、虚拟控制台</strong></p>
+<ul>
+<li>Linux系统可以同时接受多个用户同时登录，还允许用户进行多次登录，这是因为Linux系统提供了虚拟控制台的访问方式。</li>
+<li>在字符界面下，虚拟控制台的选择可以通过按下[Alt]键和一个功能键来实现，通常使用F1~F6键。比如用户登录后，按下[Alt+F2]键，用户可以看到“login：”提示符，说明用户进入了第二个虚拟控制台。然后只需按[Alt+F1]组合键，就可以回到第-一个虚拟控制台。</li>
+<li>如果用户在图形界面下，那么可以使用[Ctrl+ Alt+F2]~[Ctrl+ Alt+F6]组合键切换字符虚拟控制台，使用[Ctrl+Alt+F1]可以切换到图形界面。</li>
+</ul>
+<p><strong>5、关闭和重启Linux系统</strong></p>
+<ul>
+<li>在Linux系统中常用的关闭/重启系统的命令有shutdown、halt、reboot，每个命令的内部_工作过程是不同的。<ul>
+<li><strong>shutdown命令</strong><br>shutdown命令可以安全地关闭或重启Linux系统。<br>命令语法：<br>shutdown[选项][时间][警告信息]<br>[例3.1]立即关闭计算机系统。<br><code>[root@rhel ~]#shutdown -h now</code><br>[例3.2]定时45分钟 后关闭计算机系统。<br><code>[root@rhel ~]#shutdown -h +45</code><br>[例3.3]立即重新启动计算机系统，并发出警告信息<br><code>[root@rhel ~]#shutdown -r now &quot;system will be reboot now.&quot;</code><br>[例3.4]定时在1 点38分重新启动计算机系统<br><code>[root@rhel ~]#shutdown -r 01:38</code></li>
+<li><strong>halt命 令</strong><br>使用halt命令就是调用“shutdown-h”命令执行关机任务。<br>命令语法：halt[选项]<br>[例3.5]使用halt命 令关闭系统。<br><code>[root@rhel ~]# halt</code></li>
+<li><strong>reboot命令</strong><br>reboot命令的工作过程与halt相似，不过reboot是引发计算机重启，而halt是引发计算机关闭。它的选项与halt相似。<br>[例3.6]使用reboot命 令重启计算机系统。<br><code>[root@rhel ~]# reboot</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>6、目标</strong></p>
+<ul>
+<li>在RHEL7之前的版本，使用运行级别代表特定的操作模式。运行级别被定义为七个级别，用数字0到6表示，每个运行级别可以启动特定的一些服务。RHEL 7使用目标（target）替换运行级别。目标使用目标单元文件描述，目标单位文件扩展名是.target，目标单元文件的唯一目标，是将其他systemd单元文件通过一连串的依赖关系组织在一起。比如graphical.target单元，用于启动一个图形会话，systemd会启动像GNOME显示管理（gdm.service）、帐号服务（axxounts-daemon）这样的服务，并且会激活multi-user.target单元。相似的multi-user.target单元，会启动必不可少的NetworkManager service、dbus service服务，并激活basic.target单 元。</li>
+<li>每一个目标都有名字和独特的功能，并且能够同时启用多个。一些目标继承其他目标的服务，并启动新服务。<br>systemd提供了一些模仿SystemVinit启动级别的目标，仍可以使用旧的telinit启动级别命令切换。</li>
+<li>预定义目标和运行级别对应关系</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>运行级别</th>
+<th>目标</th>
+<th>目标的链接文件</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>poweroff.target</td>
+<td>runlevel0.target</td>
+<td>关闭系统</td>
+</tr>
+<tr>
+<td>1</td>
+<td>rescue.target</td>
+<td>runlevel1.target</td>
+<td>进入救援模式</td>
+</tr>
+<tr>
+<td>2</td>
+<td>multi-user.target</td>
+<td>runlevel2.target</td>
+<td>进入非图形界面的多用户方式</td>
+</tr>
+<tr>
+<td>3</td>
+<td>multi-user.target</td>
+<td>runlevel3.target</td>
+<td>进入非图形界面的多用户方式</td>
+</tr>
+<tr>
+<td>4</td>
+<td>multi-user.target</td>
+<td>runlevel4.target</td>
+<td>进入非图形界面的多用户方式</td>
+</tr>
+<tr>
+<td>5</td>
+<td>graphical.target</td>
+<td>runlevel5.target</td>
+<td>进入图形界面的多用户方式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>reboot.target</td>
+<td>runlevel6.target</td>
+<td>重启系统</td>
+</tr>
+</tbody></table>
+<h4 id="2-在Linux系统下获取帮助"><a href="#2-在Linux系统下获取帮助" class="headerlink" title="2.在Linux系统下获取帮助"></a>2.在Linux系统下获取帮助</h4><ul>
+<li><p><strong>使用man手册页</strong></p>
+<ul>
+<li>一般情况下，Linux系统中所有的资源都会随操作系统一起发行，包括内核源代码。而在线手册是操作系统所有资源的一本很好的使用手册。有不懂的命令时可以用man查看这个命令，写程序时有不会用的函数可以用man查看这个函数，有不懂的文件时也可以用man查看文件。</li>
+<li>一般情况下man手册页的资源主要位于/usr/share/man目录下。</li>
+<li>man手册内/可以用于查询</li>
+</ul>
+</li>
+<li><p><strong>man命令</strong><br>man命令格式化并显示在线的手册页。通常使用者只要在命令man后，输入想要获取的命令的名称，man就会列出一份完整的说明，其内容包括命令语法、各选项的意义以及相关命令等。<br>命令语法：man[选项][名称]</p>
+</li>
+<li><p><strong>man手册页类型</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="left">用户命令</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">系统调用</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">C语言函数库</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">设备和特殊文件</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">文件格式和约定</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="left">游戏程序</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="left">杂记</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="left">系统管理工具</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="left">Linux内核API（内核调用）</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>使用–help选项获取帮助</strong></p>
+<p>使用–help选项可以显示命令的使用方法以及命令选项的含义。只要在所需要显示的命令后面输入“–help”选项，然后就可以看到所查命令的帮助内容了。<br>命令语法：<br>[命令]–help.<br>[例3.9]查看mkdir命令的帮助信息。<br><code>[root@rhel ~]# mkdir --help</code></p>
+</li>
+</ul>
+<h4 id="3-Shell基础"><a href="#3-Shell基础" class="headerlink" title="3.Shell基础"></a>3.Shell基础</h4><ul>
+<li><p>Shell简介</p>
+<ul>
+<li>在AT&amp;T工作的Dennis Ritchie 和Ken Thompson两人在设计Unix操作系统的时候，想要为用户创建一种与Unix系统交流的方法。那时的操作系统带有命令解释器。命令解释器接受用户的命令，然后解释它们，因而计算机可以使用这些命令。</li>
+<li>Ritchie和Thompson想要提供比当时的命令解释器具备更优异功能的工具。这导致了Bourne Shell（通称为sh）的开发，由S.R.Bourne创建。自从Bourne Shell出现以后，其它类型Shell也被一一开发，比如C Shell（csh）和Korn Shell（ksh）。</li>
+<li>Shell接收用户命令，然后调用相应的应用程序，同时它还是一种程序设计语言，是系统管理维护时的重要工具。作为命令语言，它交互式的解释和执行用户输入的命令或者自动地解释和执行预先设定好的一连串的命令。作为程序设计语言，它可以定义各种变量和参数，并提供了许多在高级语言中才具有的控制结构（循环和分支）。</li>
+<li>Shell命令重新初始化用户的登录会话。当给出该命令时，就会重新设置进程的控制终端的端口特征，并取消对端口的所有访问。然后Shell命令为用户把进程凭证和环境重新设置为缺省值，并执行用户的初始程序。根据调用进程的登录用户标识建立所有的凭证和环境。</li>
+<li>目前流行的Shell有sh、csh、ksh、tcsh 和bash等。大部分Linux系统的默认Shell类型为bash。</li>
+</ul>
+</li>
+<li><p>bash简介</p>
+<ul>
+<li>bash（Bourne Again Shell）最早是在1987年由布莱恩.福克斯开发的一个为GNU计划编写的Unix Shell。bash目前是大多数Linux系统默认的Shell，它还能运行于大多数Unix风格的操作系统上。</li>
+<li>bash的命令语法是Bourne shell命令语法的超集。数量庞大的Bourne shell脚本大多不经过修改就可以在bash中执行，只有那些引用了Bourne特殊变量或使用了Bourne内置命令的脚本才需要修改。bash的命令语法很多来自ksh和csh，比如命令行编辑、命令历史、目录栈、$RANDOM变量、$PPID变量以及POSIX命令置换语法。</li>
+</ul>
+</li>
+<li><p>bash命令</p>
+<ul>
+<li>Linux系统的标准提示符包括了用户登录名、登录的主机名、当前所在的工作目录路径和提示符号。<br>以普通用户zhangsan登录名为rhel的主机，他的工作目录是/home/zhangsan，如下所示。<br><code>[zhangsan@rhel ~]$</code><br>以root用户登录系统的提示符如下所示。<br><code>[root@rhel ~]#</code></li>
+</ul>
+</li>
+<li><p>Shell命令一般格 式</p>
+<ul>
+<li>要运行命令的话，只需要在提示符后敲进命令，然后再按“回车”键。<br>命令语法：<br>[Shell命令][选项][参数]</li>
+<li>所有选项在该命令的man手册页中都有详细的介绍，而参数则由用户提供。选项决定命令如何工作，而参数则用于确定命令作用的目标。</li>
+<li>选项有短命令行选项和长命令选项两种。</li>
+</ul>
+</li>
+<li><p>Linux系统命令分类</p>
+<ul>
+<li>bash内置的命令<br>如果是bash内置的命令，则由bash负责回应。</li>
+<li>应用程序<br>如果是应用程序，那么Shell会找出该应用程序，然后将控制权交给内核，由内核执行该应用程序，执行完之后，再将控制权交回给Shell。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-使用bash"><a href="#4-使用bash" class="headerlink" title="4.使用bash"></a>4.使用bash</h4><p><strong>1、常用控制组合键</strong></p>
+<table>
+<thead>
+<tr>
+<th>控制组合键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl+l</td>
+<td>清屏</td>
+</tr>
+<tr>
+<td>Ctrl+o</td>
+<td>执行当前命令，并选择上一条命令</td>
+</tr>
+<tr>
+<td>Ctrl+s</td>
+<td>阻止屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+q</td>
+<td>允许屏幕输出</td>
+</tr>
+<tr>
+<td>Ctrl+c</td>
+<td>终止命令</td>
+</tr>
+<tr>
+<td>Ctrl+z</td>
+<td>挂起命令</td>
+</tr>
+<tr>
+<td>Ctrl+m</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>Ctrl+d</td>
+<td>输入结束，即EOF的意思，或者注销Linux系统</td>
+</tr>
+</tbody></table>
+<p><strong>2、光标操作</strong></p>
+<table>
+<thead>
+<tr>
+<th>组合键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl+a</td>
+<td>移动光标到命令行首</td>
+</tr>
+<tr>
+<td>Ctrl+e</td>
+<td>移动光标到命令行尾</td>
+</tr>
+<tr>
+<td>Ctrl+f</td>
+<td>按字符前移（向右）</td>
+</tr>
+<tr>
+<td>Ctrl+b</td>
+<td>按字符后移（向左）</td>
+</tr>
+<tr>
+<td>Ctrl+xx</td>
+<td>在命令行首和光标之间移动</td>
+</tr>
+<tr>
+<td>Ctrl+u</td>
+<td>删除从光标到命令行首的部分</td>
+</tr>
+<tr>
+<td>Ctrl+k</td>
+<td>删除从光标到命令行尾的部分</td>
+</tr>
+<tr>
+<td>Ctrl+w</td>
+<td>删除从光标到当前单词开头的部分</td>
+</tr>
+<tr>
+<td>Ctrl+d</td>
+<td>删除光标处的字符</td>
+</tr>
+<tr>
+<td>Ctrl+h</td>
+<td>删除光标前的一个字符</td>
+</tr>
+<tr>
+<td>Ctrl+y</td>
+<td>插入最近删除的单词</td>
+</tr>
+<tr>
+<td>Ctrl+t</td>
+<td>交换光标处字符和光标前面的字符</td>
+</tr>
+<tr>
+<td>Alt+f</td>
+<td>按单词前移（向右）</td>
+</tr>
+<tr>
+<td>Alt+b</td>
+<td>按单词后移（向左）</td>
+</tr>
+<tr>
+<td>Alt+d</td>
+<td>从光标处删除至单词尾</td>
+</tr>
+<tr>
+<td>Alt+c</td>
+<td>从光标处更改单词为首字母大写</td>
+</tr>
+<tr>
+<td>Alt+u</td>
+<td>从光标处更改单词为全部大写</td>
+</tr>
+<tr>
+<td>Alt+l</td>
+<td>从光标处更改单词为全部小写</td>
+</tr>
+<tr>
+<td>Alt+t</td>
+<td>交换光标处单词和光标前面的单词</td>
+</tr>
+<tr>
+<td>Alt+Backspace</td>
+<td>与Ctrl+w功能类似，分隔符有些差别</td>
+</tr>
+</tbody></table>
+<p><strong>3、特殊字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>~</td>
+<td>用户主目录</td>
+</tr>
+<tr>
+<td>`</td>
+<td>反引号，用来命令替代</td>
+</tr>
+<tr>
+<td>#</td>
+<td>注释</td>
+</tr>
+<tr>
+<td>$</td>
+<td>变量取值</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>后台进程工作</td>
+</tr>
+<tr>
+<td>(</td>
+<td>子Shell开始</td>
+</tr>
+<tr>
+<td>)</td>
+<td>子Shell结束</td>
+</tr>
+<tr>
+<td>\</td>
+<td>使命令持续到下一行</td>
+</tr>
+<tr>
+<td>|</td>
+<td>管道</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>输入重定向</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>输出重定向</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>追加重定向</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>/</td>
+<td>路径分割符</td>
+</tr>
+<tr>
+<td>;</td>
+<td>命令分隔符</td>
+</tr>
+</tbody></table>
+<p><strong>4、通配符</strong></p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>？</td>
+<td>代表任何单一字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>代表任何字符</td>
+</tr>
+<tr>
+<td>[字符组合]</td>
+<td>在中括号中的字符都符合，比如[a~z]代表所有的小写字母</td>
+</tr>
+<tr>
+<td>[!字符组合]</td>
+<td>不在中括号中的字符都符合，比如[!0-9]代表非数字的都符合</td>
+</tr>
+</tbody></table>
+<h4 id="5-Shell实用功能"><a href="#5-Shell实用功能" class="headerlink" title="5.Shell实用功能"></a>5.Shell实用功能</h4><p><strong>1、命令行自动补全</strong></p>
+<ul>
+<li><p>在Linux系统中，有太多的命令和文件名称需要记忆，使用命令行补全功能可以快速的写出文件名和命令名。<br>如果需要快速地从当前所在的目录跳转到<br>/usr/src/kernels/目录，可以执行以下操作。<br><code>[root@rhel ~]# cd /u&lt;Tab&gt;/sr&lt;Tab&gt;/k&lt;Tab&gt;</code></p>
+<p><Tab>是按”Tab”键的意思，使用”Tab”键也称为命令行自动补全，这在平常应用中是不可缺少的</p>
+</li>
+</ul>
+<p><strong>2、命令历史记录</strong></p>
+<ul>
+<li>在操作Linux系统的时候，每一个操作的命令都会记录到命令历史中，在以后可以通过命令历史查看和使用以前操作的命令。</li>
+<li>bash启动的时候会读取~/.bash_history文件，并将其载入到内存中，$HISTFILE变量就用于设置~/.bash__history文件，bash退出时也会把内存中的历史记录回写到~/.bash_history文 件中。</li>
+<li>使用history命令可以查看命令历史记录，每一条命令前面都会有一个序列号标示。<br>命令语法：history[选项]</li>
+<li>Ctrl+R 使用历史记录中的命令</li>
+</ul>
+<p><strong>3、使用命令历史</strong></p>
+<table>
+<thead>
+<tr>
+<th>举例</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>!!</td>
+<td>运行上一个命令</td>
+</tr>
+<tr>
+<td>!6</td>
+<td>运行第6个命合</td>
+</tr>
+<tr>
+<td>!8/test</td>
+<td>运行第8个命令并在命令后面加上/test</td>
+</tr>
+<tr>
+<td>!?CF?</td>
+<td>运行上一个包含CF字符串的命令</td>
+</tr>
+<tr>
+<td>!ls</td>
+<td>运行上一个Is命令（或以ls开头的历史命令）</td>
+</tr>
+<tr>
+<td>!ls:s/CF/G</td>
+<td>运行上一个Is命令，其中把CF替换成G</td>
+</tr>
+<tr>
+<td>fc</td>
+<td>编辑并运行上一个历史命令</td>
+</tr>
+<tr>
+<td>fc 6</td>
+<td>编辑并运行第6条历史命令</td>
+</tr>
+<tr>
+<td>^boot^root^</td>
+<td>快速替换。将最后一个命合中的boot替换为root后运行</td>
+</tr>
+<tr>
+<td>!-5</td>
+<td>运行倒数第5个命令</td>
+</tr>
+<tr>
+<td>!$</td>
+<td>运行前一个命令最后的参数</td>
+</tr>
+</tbody></table>
+<p>[例3.11]使用命令历史记录功能键。<br><code>[root@rhel ~]# mkdir/root/aaa</code><br>//创建目录/root/aaa<br><code>[root@rhel ~]# cd !$</code><br><code>cd/root/aaa</code><br>//!$是指重复前一个命令最后的参数，参数是/root/aaa<br><code>[root@rhel aaa]# pwd</code><br><code>/root/aaa</code><br>//显示用户当前目录是/root/aaa</p>
+<p><strong>4、搜索历史命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>↑</td>
+<td>查看上一个命令</td>
+</tr>
+<tr>
+<td>↓</td>
+<td>查看下一个命令</td>
+</tr>
+<tr>
+<td>Ctrl+p</td>
+<td>查看历史列表中的上一个命令</td>
+</tr>
+<tr>
+<td>Ctrl+n</td>
+<td>查看历史列表中的下一个命令</td>
+</tr>
+<tr>
+<td>Ctrl+r</td>
+<td>向上搜索历史列表</td>
+</tr>
+<tr>
+<td>Alt+p</td>
+<td>向上搜索历史列表</td>
+</tr>
+<tr>
+<td>Alt+&gt;</td>
+<td>移动到历史列表末尾</td>
+</tr>
+</tbody></table>
+<p><strong>5、命令排列</strong></p>
+<ul>
+<li><p>如果希望一次执行多个命令，Shell允许在不同的命令之间，放上特殊的排列字符。</p>
+<ul>
+<li><p>1.使用”;”<br>使用”;”命令时先执行命令1，不管命令1是否出错，接下来就执行命2。<br>命令语法：命令1;命令2</p>
+</li>
+<li><p>2.使用”&amp;&amp;”<br>使用”&amp;&amp;”命令时只有当命令1正确运行完毕后，才能执行命令2。<br>命令语法：命令1&amp;&amp;命令2</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>6、命令替换</strong></p>
+<ul>
+<li>在Linux系统中，Shell命 令的参数可以由另外一个命令的结果来替代，这种称之为命令替换。<br>1.使用”$（）”<br>命令语法：命令1 $（命令2）<br>2.使用”`“<br>命令语法：命令1`命令2`</li>
+</ul>
+<p><strong>7、命令别名</strong></p>
+<ul>
+<li>在需要执行某-一个非常长的命令时，所有的命令以及命令的选项、参数都要一一输入，很枯燥也容易出现错误。可以为常用命令定义快捷方式，这些快捷方式可以用比较简单的命令别名来定义。<ul>
+<li>1.创建别名.<br>使用alias命令可以为命令定义别名。如果命令中有空格的话，就需要使用双引号（比如在命令与选项之间就有空格）<br>命令语法：alias[别名]=[需要定义别名的命令]</li>
+<li>2.取消别名<br>当用户需要取消别名的定义时，可以使用unalias命令。<br>命令语法：unalias[别名]</li>
+</ul>
+</li>
+</ul>
+<p><strong>8、管道</strong></p>
+<ul>
+<li>Linux系统的理念是汇集许多小程序，每个程序都有特殊的专长。复杂的任务不是由大型软件完成，而是运用Shell的机制，组合许多小程序共同完成。管道就在其中发挥着重要的作用，它可以将某个命令的输出信息当作某个命令的输入，由管道符号“|”来标识。<br>命令语法：<br>[命令1]|[命令2]|[命令3]<ul>
+<li>[例3.22]<br>使用简单的管道。<br><code>[root@rhel ~]#Is/etc|more</code><br>abr<br>tacpi<br>adjtime<br>akonadi<br>–More–<br>//命令|s/etc显示/etc目录的内容，命令more是分页显示内容</li>
+<li>[例3.23]<br>使用复杂的管道。<br><code>[root@PC-LINUX ~]#rpm -qa|grep a|more</code><br>//命令rpm-qa显示已经安装在系统上的RPM包，命令grepa是过滤软件包，命令more是分页显示这些信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-重定向"><a href="#6-重定向" class="headerlink" title="6.重定向"></a>6.重定向</h4><ul>
+<li>希望将命令的输出结果保存到文件中，或者以文件内容作为命令的参数，这时就需要用到重定向。重定向不使用系统的标准输入端口、标准输出端口或是标准错误端口，而是进行重新的指定。</li>
+<li>重定向有四种方式：输出重定向、输入重定向、错误重定向以及同时实现输出和错误的重定向。</li>
+</ul>
+<p><strong>输出重定向</strong></p>
+<ul>
+<li>输出重定向，即将某一命令执行的输出保存到文件中，如果已经存在相同的文件，那么覆盖源文件中的内容。命令语法：<br>[命令]&gt;[文件]<ul>
+<li>[例3.24]使用输出重定向将/boot目录的内容保存到/root/abc文件中。<br><code>[root@rhel ~]#ls/boot &gt;/root/abc</code><br>[例3.25]使用echo命令和输出重定向创建/root/mm文件，文件内容是hello。<br><code>[root@rhel ~]#echo Hello &gt;/root/mm</code><br><code>[root@rhel ~]#cat/root/mm</code><br>Hello<br>//显示文件/root/mm，可以看到文件的内容是Hello</li>
+</ul>
+</li>
+<li>另外一种特殊的输出重定向是输出追加重定向，即将某一命令执行的输出添加到已经存在的文件中。<br>命令语法：<br>[命令]&gt;&gt;[文件]<ul>
+<li>[例3.26]使用输出追加重定向将数据写入文件/root/ao。<br><code>[root@rhel ~]#echo Hello &gt;/root/ao</code><br>//先创建文件/root/ao，文件内容是Hello<br><code>[root@rhel ~]#echo Linux &gt;&gt;/root/ao</code><br>//向文件/root/ao中追加数据Linux<br><code>[root@rhel ~]#cat/root/ao</code><br>Hello<br>Linux</li>
+</ul>
+</li>
+</ul>
+<p><strong>输入重定向</strong></p>
+<ul>
+<li><p>输入重定向，即将某一文件的内容作为命令的输入。<br>命令语法：<br>[命令]&lt;[文件]</p>
+<ul>
+<li>[例3.27]使用输入重定向将文件/root/mm的内容作为输入让cat命令执行。<br><code>[root@rhel ~]#cat &lt;/root/mm</code><br>Hello<br>//可以看到文件/root/mm的内容是Hello</li>
+</ul>
+</li>
+<li><p>另外一种特殊的输入重定向是输入追加重定向，这种输入重定向告诉Shell，当前标准输入来自命令行的一对分隔符之间的内容。<br>命令语法：<br>[命令]&lt;&lt;[分隔符]<br>&gt;[文本内容]<br>&gt;[分隔符]</p>
+<ul>
+<li>[例3.28]使用输入追加重定向创建/root/bc文件。<br><code>[root@rhel ~]#cat &gt;/root/bc &lt;&lt;EOF</code><br><code>\&gt;Hello Linux</code><br><code>\&gt;EOF</code><br>//一般使用EOF作为分隔符</li>
+</ul>
+</li>
+</ul>
+<p><strong>错误重定向</strong></p>
+<ul>
+<li>错误重定向，即将某一命令执行的出错信息输出到指定文件中。<br>命令语法：<br>[命令]2&gt;[文件]<ul>
+<li>[例3.29]查看 根本不存在的/root/kk文件，出现报错信息，将其保存到文件/root/b中。<br><code>[root@rhel ~]#cat/root/kk 2&gt; /root/b</code><br><code>[root@rhel ~]#cat/root/b</code><br>cat：lrootlkk：没有那个文件或目录<br>//使用cat命令查看/root/b文件，可以看到其内容就是执行命令cat/root/kk的报错信息</li>
+</ul>
+</li>
+<li>另外一种特殊的错误重定向是错误追加重定向，即将某一命令执行的出错信息添加到已经存在的文件中<br>命令语法：<br>[命令]2&gt;&gt;[文件]<ul>
+<li>[例3.30]使用错误追加重定向，将执行命令的多次出错信息保存到文件/root/b中。<br><code>[root@rhel ~]#cat/root/kk 2&gt; /root/b</code><br><code>[root@rhel ~]#cat/root/kk 2&gt;&gt; /root/b</code><br><code>[root@rhel ~]#cat/root/b</code><br>cat：/root/kk：没有那个文件或目录cat：/root/kk：没有那个文件或目录</li>
+</ul>
+</li>
+</ul>
+<p><strong>同时实现输出和错误重定向</strong></p>
+<ul>
+<li>同时实现输出和错误的重定向，即可以同时实现输出重定向和错误重定向的功能。<br>命令语法：<br>[命令]&amp;&gt;[文件]<br>[例3.31]同时使用输出和错误重定向。<br><code>[root@rhel ~]#ls/boot &amp;&gt; /root/kk</code><br><code>[root@rhel ~]#cat/root/kk</code><br>config-3.3.4-5.fc17.i686.PAE<br>grub<br>grub2<br>initramfs-3.3.4-5.fc17.i686.PAE.img<br>lost+found<br>System.map-3.3.4-5.fc17.i686.PAE<br>tboot.gz<br>tboot-syms<br>vmlinuz-3.3.4-5.fc17.i686.PAE<br>//因为/boot目录下有文件，所以最终使用了输出重定向</li>
+</ul>
+<h4 id="7-vi编辑器"><a href="#7-vi编辑器" class="headerlink" title="7.vi编辑器"></a>7.vi编辑器</h4><ul>
+<li>文本编辑器有很多，图形模式下有gedit，kwrite等编辑器，文本模式下的编辑器有vi，vim （vi的增强版本）和nano。</li>
+<li>vi和vim是Linux系统中最常用的编辑器，本节主要讲述vi编辑器的使用。</li>
+</ul>
+<p><strong>vi编辑器简介</strong></p>
+<ul>
+<li>vi编辑器是Linux系统字符界面下最常使用的文本编辑器，用于编辑任何ASCII文本，对于编辑源程序尤其有用。vi编辑器功能非常强大，通过使用vi编辑器，可以对文本进行创建、查找、替换、删除、复制和粘贴等操作。</li>
+<li>在Linux系统Shell提示符下输入vi和文件名称后，就进入vi编辑界面。如果系统内还不存在该文件，就意味着创建文件，如果系统内存在该文件，就意味着编辑该文件。</li>
+<li>vi编辑器有3种基本工作模式，分别是命令模式、插入模式和末行模式。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      <div>
+    
+    
+    
+    
+    
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"> <i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+    
+      
+      
+      
+    
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/20/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%A6%82%E8%A7%88/" rel="next" title="知识点概览">
+                <i class="fa fa-chevron-left"></i> 知识点概览
+              </a>
+            
+          </div>
+    
+          <span class="post-nav-divider"></span>
+    
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+    
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+    
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Alert Wang" />
+            
+              <p class="site-author-name" itemprop="name">Alert Wang</p>
+              <p class="site-description motion-element" itemprop="description">To make each day count.</p>
+          </div>
+    
+          <nav class="site-state motion-element">
+    
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+    
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+    
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+    
+          </nav>
+    
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+    
+          
+    
+          
+          
+    
+          
+          
+    
+          
+
+        </div>
+      </section>
+    
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+    
+            
+              
+            
+    
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Linux系统的组成"><span class="nav-number">1.</span> <span class="nav-text">一、Linux系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-内核"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.内核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Shell"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.Shell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-文件系统"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.文件系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-应用程序"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.应用程序</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Linux系统"><span class="nav-number">2.</span> <span class="nav-text">二、安装Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-准备安装Linux系统"><span class="nav-number">2.0.1.</span> <span class="nav-text">1.准备安装Linux系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装Linux系统"><span class="nav-number">2.0.2.</span> <span class="nav-text">2.安装Linux系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-注销、关闭和重启Linux系统"><span class="nav-number">2.0.3.</span> <span class="nav-text">3.注销、关闭和重启Linux系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-FirewallD防火墙"><span class="nav-number">2.0.4.</span> <span class="nav-text">4.FirewallD防火墙</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、字符界面操作基础"><span class="nav-number">3.</span> <span class="nav-text">三、字符界面操作基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-字符界面简介"><span class="nav-number">3.0.1.</span> <span class="nav-text">1.字符界面简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-在Linux系统下获取帮助"><span class="nav-number">3.0.2.</span> <span class="nav-text">2.在Linux系统下获取帮助</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Shell基础"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.Shell基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-使用bash"><span class="nav-number">3.0.4.</span> <span class="nav-text">4.使用bash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Shell实用功能"><span class="nav-number">3.0.5.</span> <span class="nav-text">5.Shell实用功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-重定向"><span class="nav-number">3.0.6.</span> <span class="nav-text">6.重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-vi编辑器"><span class="nav-number">3.0.7.</span> <span class="nav-text">7.vi编辑器</span></a></li></ol></li></ol></li></ol></div>
+            
+    
+          </div>
+        </section>
+      <!--/noindex-->
+      
+    
+      
+    
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alert Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'UggBTHKOtLBOekE9wGvlSBCt-gzGzoHsz',
+        appKey: '3LwOObp1OeBdP620FhBolTOL',
+        placeholder: '快来评论一个吧ヾ(✿ﾟ▽ﾟ)ノ',
+        avatar:'/images/avatar.png',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KlYzE1cIFaVnMEr33xVHPIbm-gzGzoHsz", "oehmjwQ5e3NVsVxiFlzsrNzc");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
