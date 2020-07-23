@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2a901bf3"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/firewall_32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/firewall_16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ML," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alert Wang's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="numpy NumPy Ndarray对象1numpy.array(object, dtype &#x3D; None, copy &#x3D; True, order &#x3D; None, subok &#x3D; False, ndmin &#x3D; 0)       参数说明     名称 描述   object 数组或嵌套的数列   dtype 数组元素的数据类型，可选   copy 对象是否需要复制，可选   order 创建数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础">
+<meta property="og:url" content="http://yoursite.com/2020/07/23/python%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Alert Wang&#39;s blog">
+<meta property="og:description" content="numpy NumPy Ndarray对象1numpy.array(object, dtype &#x3D; None, copy &#x3D; True, order &#x3D; None, subok &#x3D; False, ndmin &#x3D; 0)       参数说明     名称 描述   object 数组或嵌套的数列   dtype 数组元素的数据类型，可选   copy 对象是否需要复制，可选   order 创建数组">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-23T08:33:17.000Z">
+<meta property="article:modified_time" content="2020-07-23T08:36:18.332Z">
+<meta property="article:author" content="Alert Wang">
+<meta property="article:tag" content="ML">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/23/python基础/"/>
+
+
+
+
+
+  <title>python基础 | Alert Wang's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/Alert264" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alert Wang's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习+记录</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+    
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/23/python%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alert Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+    
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alert Wang's blog">
+    </span>
+    
+    
+      <header class="post-header">
+    
+        
+        
+          <h1 class="post-title" itemprop="name headline">python基础</h1>
+        
+    
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-23T16:33:17+08:00">
+                2020-07-23
+              </time>
+            
+    
+            
+    
+            
+          </span>
+    
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
+                    <span itemprop="name">日常学习记录</span>
+                  </a>
+                </span>
+    
+                
+                
+              
+            </span>
+          
+    
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/07/23/python%E5%9F%BA%E7%A1%80/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/23/python%E5%9F%BA%E7%A1%80/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+    
+          
+          
+             <span id="/2020/07/23/python%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="python基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+    
+          
+    
+          
+    
+          
+    
+        </div>
+      </header>
+    
+    
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+    
+      
+      
+    
+      
+        <h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><p><a name="tIeuf"></a></p>
+<h3 id="NumPy-Ndarray对象"><a href="#NumPy-Ndarray对象" class="headerlink" title="NumPy Ndarray对象"></a>NumPy Ndarray对象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.array(object, dtype = <span class="literal">None</span>, copy = <span class="literal">True</span>, order = <span class="literal">None</span>, subok = <span class="literal">False</span>, ndmin = <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th align="center">参数说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">名称</td>
+<td>描述</td>
+</tr>
+<tr>
+<td align="center">object</td>
+<td>数组或嵌套的数列</td>
+</tr>
+<tr>
+<td align="center">dtype</td>
+<td>数组元素的数据类型，可选</td>
+</tr>
+<tr>
+<td align="center">copy</td>
+<td>对象是否需要复制，可选</td>
+</tr>
+<tr>
+<td align="center">order</td>
+<td>创建数组的样式，C为行方向，F为列方向，A为默认方向</td>
+</tr>
+<tr>
+<td align="center">subok</td>
+<td>默认返回一个与基类类型一致的数组</td>
+</tr>
+<tr>
+<td align="center">ndmin</td>
+<td>指定生成数组的最小维度</td>
+</tr>
+</tbody></table>
+<p><a name="ZlCF0"></a></p>
+<h3 id="NumPy数据类型"><a href="#NumPy数据类型" class="headerlink" title="NumPy数据类型"></a>NumPy数据类型</h3><table>
+<thead>
+<tr>
+<th>bool_</th>
+<th>布尔型数据类型（True 或者 False）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int_</td>
+<td>默认的整数类型（类似于 C 语言中的 long，int32 或 int64）</td>
+</tr>
+<tr>
+<td>intc</td>
+<td>与 C 的 int 类型一样，一般是 int32 或 int 64</td>
+</tr>
+<tr>
+<td>intp</td>
+<td>用于索引的整数类型（类似于 C 的 ssize_t，一般情况下仍然是 int32 或 int64）</td>
+</tr>
+<tr>
+<td>int8</td>
+<td>字节（-128 to 127）</td>
+</tr>
+<tr>
+<td>int16</td>
+<td>整数（-32768 to 32767）</td>
+</tr>
+<tr>
+<td>int32</td>
+<td>整数（-2147483648 to 2147483647）</td>
+</tr>
+<tr>
+<td>int64</td>
+<td>整数（-9223372036854775808 to 9223372036854775807）</td>
+</tr>
+<tr>
+<td>uint8</td>
+<td>无符号整数（0 to 255）</td>
+</tr>
+<tr>
+<td>uint16</td>
+<td>无符号整数（0 to 65535）</td>
+</tr>
+<tr>
+<td>uint32</td>
+<td>无符号整数（0 to 4294967295）</td>
+</tr>
+<tr>
+<td>uint64</td>
+<td>无符号整数（0 to 18446744073709551615）</td>
+</tr>
+<tr>
+<td>float_</td>
+<td>float64 类型的简写</td>
+</tr>
+<tr>
+<td>float16</td>
+<td>半精度浮点数，包括：1 个符号位，5 个指数位，10 个尾数位</td>
+</tr>
+<tr>
+<td>float32</td>
+<td>单精度浮点数，包括：1 个符号位，8 个指数位，23 个尾数位</td>
+</tr>
+<tr>
+<td>float64</td>
+<td>双精度浮点数，包括：1 个符号位，11 个指数位，52 个尾数位</td>
+</tr>
+<tr>
+<td>complex_</td>
+<td>complex128 类型的简写，即 128 位复数</td>
+</tr>
+<tr>
+<td>complex64</td>
+<td>复数，表示双 32 位浮点数（实数部分和虚数部分）</td>
+</tr>
+<tr>
+<td>complex128</td>
+<td>复数，表示双 64 位浮点数（实数部分和虚数部分）</td>
+</tr>
+</tbody></table>
+<p><a name="LBPIn"></a></p>
+<h3 id="数据类型对象"><a href="#数据类型对象" class="headerlink" title="数据类型对象"></a>数据类型对象</h3><p><br />数据类型对象是用来描述与数组对应的内存区域如何使用，这依赖如下几个方面：<br /></p>
+<ul>
+<li>数据的类型（整数，浮点数或者 Python 对象）</li>
+<li>数据的大小（例如， 整数使用多少个字节存储）</li>
+<li>数据的字节顺序（小端法或大端法）</li>
+<li>在结构化类型的情况下，字段的名称、每个字段的数据类型和每个字段所取的内存块的部分</li>
+<li>如果数据类型是子数组，它的形状和数据类型</li>
+</ul>
+<p>字节顺序是通过对数据类型预先设定”&lt;”或”&gt;”来决定的。”&lt;”意味着小端法(最小值存储在最小的地址，即低位组放在最前面)。”&gt;”意味着大端法(最重要的字节存储在最小的地址，即高位组放在最前面)。<br /><br><br />dtype 对象是使用以下语法构造的：<br /><code>numpy.dtype(object, align, copy)</code><br />object - 要转换为的数据类型对象<br />align - 如果为 true，填充字段使其类似 C 的结构体。<br />copy - 复制 dtype 对象 ，如果为 false，则是对内置数据类型对象的引用<br /><br><br />每个内建类型都有一个唯一定义它的字符代码，如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">对应类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">b</td>
+<td align="left">布尔型</td>
+</tr>
+<tr>
+<td align="left">i</td>
+<td align="left">(有符号) 整型</td>
+</tr>
+<tr>
+<td align="left">u</td>
+<td align="left">无符号整型 integer</td>
+</tr>
+<tr>
+<td align="left">f</td>
+<td align="left">浮点型</td>
+</tr>
+<tr>
+<td align="left">c</td>
+<td align="left">复数浮点型</td>
+</tr>
+<tr>
+<td align="left">m</td>
+<td align="left">timedelta（时间间隔）</td>
+</tr>
+<tr>
+<td align="left">M</td>
+<td align="left">datetime（日期时间）</td>
+</tr>
+<tr>
+<td align="left">O</td>
+<td align="left">(Python) 对象</td>
+</tr>
+<tr>
+<td align="left">S, a</td>
+<td align="left">(byte-)字符串</td>
+</tr>
+<tr>
+<td align="left">U</td>
+<td align="left">Unicode</td>
+</tr>
+<tr>
+<td align="left">V</td>
+<td align="left">原始数据 (void)</td>
+</tr>
+</tbody></table>
+<p><a name="iYMpk"></a></p>
+<h3 id="NumPy数组"><a href="#NumPy数组" class="headerlink" title="NumPy数组"></a>NumPy数组</h3><p>NumPy 的数组中比较重要 ndarray 对象属性</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">ndarray.ndim</td>
+<td align="left">秩，即轴的数量或维度的数量</td>
+</tr>
+<tr>
+<td align="left">ndarray.shape</td>
+<td align="left">数组的维度，对于矩阵，n 行 m 列</td>
+</tr>
+<tr>
+<td align="left">ndarray.size</td>
+<td align="left">数组元素的总个数，相当于 .shape 中 n*m 的值</td>
+</tr>
+<tr>
+<td align="left">ndarray.dtype</td>
+<td align="left">ndarray 对象的元素类型</td>
+</tr>
+<tr>
+<td align="left">ndarray.itemsize</td>
+<td align="left">ndarray 对象中每个元素的大小，以字节为单位</td>
+</tr>
+<tr>
+<td align="left">ndarray.flags</td>
+<td align="left">ndarray 对象的内存信息</td>
+</tr>
+<tr>
+<td align="left">ndarray.real</td>
+<td align="left">ndarray元素的实部</td>
+</tr>
+<tr>
+<td align="left">ndarray.imag</td>
+<td align="left">ndarray 元素的虚部</td>
+</tr>
+<tr>
+<td align="left">ndarray.data</td>
+<td align="left">包含实际数组元素的缓冲区，由于一般通过数组的索引获取元素，所以通常不需要使用这个属性。</td>
+</tr>
+</tbody></table>
+<p><br />数组创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">numpy.empty(shape, dtype = float, order = <span class="string">'C'</span>)<span class="comment"># 数组元素随机</span></span><br><span class="line">numpy.zeros(shape, dtype = float, order = <span class="string">'C'</span>)<span class="comment"># 数组元素以0填充</span></span><br><span class="line">numpy.ones(shape, dtype = <span class="literal">None</span>, order = <span class="string">'C'</span>)<span class="comment"># 数组元素以1填充</span></span><br><span class="line">numpy.asarray(a, dtype = <span class="literal">None</span>, order = <span class="literal">None</span>)<span class="comment"># 从已有数组创建</span></span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">shape</td>
+<td align="left">数组形状</td>
+</tr>
+<tr>
+<td align="left">dtype</td>
+<td align="left">数据类型，可选</td>
+</tr>
+<tr>
+<td align="left">order</td>
+<td align="left">有”C”和”F”两个选项,分别代表，行优先和列优先，在计算机内存中的存储元素的顺序。</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">任意形式的输入参数，可以是，列表, 列表的元组, 元组, 元组的元组, 元组的列表，多维数组</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numpy.frombuffer(buffer, dtype = float, count = <span class="number">-1</span>, offset = <span class="number">0</span>)</span><br><span class="line"><span class="comment"># 用于实现动态数组,接受 buffer 输入参数，以流的形式读入转化成 ndarray 对象。</span></span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">buffer</td>
+<td align="left">可以是任意对象，会以流的形式读入。</td>
+</tr>
+<tr>
+<td align="left">dtype</td>
+<td align="left">返回数组的数据类型，可选</td>
+</tr>
+<tr>
+<td align="left">count</td>
+<td align="left">读取的数据数量，默认为-1，读取所有数据。</td>
+</tr>
+<tr>
+<td align="left">offset</td>
+<td align="left">读取的起始位置，默认为0。</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype)</span><br><span class="line"><span class="comment"># 根据 start 与 stop 指定的范围以及 step 设定的步长，生成一个 ndarray。</span></span><br></pre></td></tr></table></figure>
+
+<p><a name="rCN3V"></a></p>
+<h3 id="NumPy切片和索引"><a href="#NumPy切片和索引" class="headerlink" title="NumPy切片和索引"></a>NumPy切片和索引</h3><br />
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.arange(<span class="number">10</span>)</span><br><span class="line"><span class="comment"># 从索引 2 开始到索引 7 停止，间隔为2</span></span><br><span class="line">s = slice(<span class="number">2</span>,<span class="number">7</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 也可以通过冒号分隔切片参数 start:stop:step 来进行切片操作</span></span><br><span class="line">b = a[<span class="number">2</span>:<span class="number">7</span>:<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> (a[s])</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果为</span><br><span class="line">[<span class="number">2</span>  <span class="number">4</span>  <span class="number">6</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 冒号的解释：如果只放置一个参数，如 [2]，将返回与该索引相对应的单个元素。</span></span><br><span class="line"><span class="comment"># 如果为 [2:]，表示从该索引开始以后的所有项都将被提取。</span></span><br><span class="line"><span class="comment"># 如果使用了两个参数，如 [2:7]，那么则提取两个索引(不包括停止索引)之间的项。</span></span><br></pre></td></tr></table></figure>
+
+<p>切片还可以包括省略号 <strong>…</strong>，来使选择元组的长度与数组的维度相同。 如果在行位置使用省略号，它将返回包含行中元素的 ndarray。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"> </span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])  </span><br><span class="line"><span class="keyword">print</span> (a[...,<span class="number">1</span>])   <span class="comment"># 第2列元素</span></span><br><span class="line"><span class="keyword">print</span> (a[<span class="number">1</span>,...])   <span class="comment"># 第2行元素</span></span><br><span class="line"><span class="keyword">print</span> (a[...,<span class="number">1</span>:])  <span class="comment"># 第2列及剩下的所有元素</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line">[<span class="number">2</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span>]</span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">4</span> <span class="number">5</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">6</span>]]</span><br></pre></td></tr></table></figure>
+
+<p><a name="K5pZK"></a></p>
+<h3 id="NumPy迭代数组"><a href="#NumPy迭代数组" class="headerlink" title="NumPy迭代数组"></a>NumPy迭代数组</h3><p>NumPy 迭代器对象 <strong>numpy.nditer</strong> 提供了一种灵活访问一个或者多个数组元素的方式。<br />迭代器最基本的任务的可以完成对数组元素的访问。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"> </span><br><span class="line">a = np.arange(<span class="number">6</span>).reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'原始数组是：'</span>)</span><br><span class="line"><span class="keyword">print</span> (a)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'\n'</span>)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'迭代输出元素：'</span>)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> np.nditer(a):</span><br><span class="line">    <span class="keyword">print</span> (x, end=<span class="string">", "</span> )</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line"></span><br><span class="line">原始数组是：</span><br><span class="line">[[<span class="number">0</span> <span class="number">1</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">迭代输出元素：</span><br><span class="line"><span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>,</span><br></pre></td></tr></table></figure>
+
+<p>控制遍历顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> np.nditer(a, order=<span class="string">'F'</span>):</span><br><span class="line"><span class="comment"># Fortran order，即是列序优先；</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> np.nditer(a.T, order=<span class="string">'C'</span>):</span><br><span class="line"><span class="comment"># C order，即是行序优先；</span></span><br></pre></td></tr></table></figure>
+
+<p>修改数组中元素的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"> </span><br><span class="line">a = np.arange(<span class="number">0</span>,<span class="number">60</span>,<span class="number">5</span>) </span><br><span class="line">a = a.reshape(<span class="number">3</span>,<span class="number">4</span>)  </span><br><span class="line"><span class="keyword">print</span> (<span class="string">'原始数组是：'</span>)</span><br><span class="line"><span class="keyword">print</span> (a)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'\n'</span>)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> np.nditer(a, op_flags=[<span class="string">'readwrite'</span>]): </span><br><span class="line">    x[...]=<span class="number">2</span>*x </span><br><span class="line"><span class="keyword">print</span> (<span class="string">'修改后的数组是：'</span>)</span><br><span class="line"><span class="keyword">print</span> (a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line"></span><br><span class="line">原始数组是：</span><br><span class="line">[[ <span class="number">0</span>  <span class="number">5</span> <span class="number">10</span> <span class="number">15</span>]</span><br><span class="line"> [<span class="number">20</span> <span class="number">25</span> <span class="number">30</span> <span class="number">35</span>]</span><br><span class="line"> [<span class="number">40</span> <span class="number">45</span> <span class="number">50</span> <span class="number">55</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改后的数组是：</span><br><span class="line">[[  <span class="number">0</span>  <span class="number">10</span>  <span class="number">20</span>  <span class="number">30</span>]</span><br><span class="line"> [ <span class="number">40</span>  <span class="number">50</span>  <span class="number">60</span>  <span class="number">70</span>]</span><br><span class="line"> [ <span class="number">80</span>  <span class="number">90</span> <span class="number">100</span> <span class="number">110</span>]]</span><br></pre></td></tr></table></figure>
+
+<p><a name="O4npM"></a></p>
+<h3 id="Numpy数组操作"><a href="#Numpy数组操作" class="headerlink" title="Numpy数组操作"></a>Numpy数组操作</h3><p><a name="hWyd0"></a></p>
+<h4 id="修改数组形状"><a href="#修改数组形状" class="headerlink" title="修改数组形状"></a>修改数组形状</h4><p><strong>numpy.reshape</strong> 函数可以在不改变数据的条件下修改形状，格式如下： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.reshape(arr, newshape, order=<span class="string">'C'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>arr：要修改形状的数组</li>
+<li>newshape：整数或者整数数组，新的形状应当兼容原有形状</li>
+<li>order：’C’ – 按行，’F’ – 按列，’A’ – 原顺序，’k’ – 元素在内存中的出现顺序。</li>
+</ul>
+<p><strong>numpy.ndarray.flat</strong>是一个数组元素迭代器</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> a.flat:</span><br><span class="line">    <span class="keyword">print</span> (element)</span><br></pre></td></tr></table></figure>
+
+<p>*<em>numpy.ndarray.flatten *</em>返回一份数组拷贝（展开），对拷贝所做的修改不会影响原始数组</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ndarray.flatten(order=<span class="string">'C'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>order：’C’ – 按行，’F’ – 按列，’A’ – 原顺序，’K’ – 元素在内存中的出现顺序。</li>
+</ul>
+<p>*<em>numpy.ravel *</em>展平的数组元素，顺序通常是”C风格”，返回的是数组视图（view，有点类似 C/C++引用reference的意味），修改会影响原始数组。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.ravel(a, order=<span class="string">'C'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>order：’C’ – 按行，’F’ – 按列，’A’ – 原顺序，’K’ – 元素在内存中的出现顺序。<br><a name="007UL"></a></li>
+</ul>
+<h4 id="翻转数组"><a href="#翻转数组" class="headerlink" title="翻转数组"></a>翻转数组</h4><p><strong>numpy.transpose</strong> 函数用于对换数组的维度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.transpose(arr, axes)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>arr：要操作的数组</li>
+<li>axes：整数列表，对应维度，通常所有维度都会对换。</li>
+</ul>
+<p>numpy.ndarray.T 类似 numpy.transpose<br /><strong>numpy.rollaxis</strong> 函数向后滚动特定的轴到一个特定位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numpy.rollaxis(arr, axis, start)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>arr：数组</li>
+<li>axis：要向后滚动的轴，其它轴的相对位置不会改变</li>
+<li>start：默认为零，表示完整的滚动。会滚动到特定位置。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      <div>
+    
+    
+    
+    
+    
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ML/" rel="tag"> <i class="fa fa-tag"></i> ML</a>
+          
+        </div>
+      
+    
+      
+      
+      
+    
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/19/Linux%E7%AC%94%E8%AE%B0/" rel="next" title="Linux笔记">
+                <i class="fa fa-chevron-left"></i> Linux笔记
+              </a>
+            
+          </div>
+    
+          <span class="post-nav-divider"></span>
+    
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+    
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+    
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+    
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Alert Wang" />
+            
+              <p class="site-author-name" itemprop="name">Alert Wang</p>
+              <p class="site-description motion-element" itemprop="description">To make each day count.</p>
+          </div>
+    
+          <nav class="site-state motion-element">
+    
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+    
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+    
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+    
+          </nav>
+    
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+    
+          
+    
+          
+          
+    
+          
+          
+    
+          
+
+        </div>
+      </section>
+    
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+    
+            
+              
+            
+    
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy"><span class="nav-number">1.</span> <span class="nav-text">numpy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NumPy-Ndarray对象"><span class="nav-number">1.1.</span> <span class="nav-text">NumPy Ndarray对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NumPy数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">NumPy数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型对象"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NumPy数组"><span class="nav-number">1.4.</span> <span class="nav-text">NumPy数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NumPy切片和索引"><span class="nav-number">1.5.</span> <span class="nav-text">NumPy切片和索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NumPy迭代数组"><span class="nav-number">1.6.</span> <span class="nav-text">NumPy迭代数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy数组操作"><span class="nav-number">1.7.</span> <span class="nav-text">Numpy数组操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改数组形状"><span class="nav-number">1.7.1.</span> <span class="nav-text">修改数组形状</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#翻转数组"><span class="nav-number">1.7.2.</span> <span class="nav-text">翻转数组</span></a></li></ol></li></ol></li></ol></div>
+            
+    
+          </div>
+        </section>
+      <!--/noindex-->
+      
+    
+      
+    
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alert Wang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+    
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'UggBTHKOtLBOekE9wGvlSBCt-gzGzoHsz',
+        appKey: '3LwOObp1OeBdP620FhBolTOL',
+        placeholder: '快来评论一个吧ヾ(✿ﾟ▽ﾟ)ノ',
+        avatar:'/images/avatar.png',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("KlYzE1cIFaVnMEr33xVHPIbm-gzGzoHsz", "oehmjwQ5e3NVsVxiFlzsrNzc");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
