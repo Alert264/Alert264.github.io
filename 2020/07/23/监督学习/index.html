@@ -109,10 +109,10 @@
 <meta property="og:description" content="监督学习从给定的训练数据集中学习出一个函数（模型参数），当新的数据到来时，可以根据这个函数预测结果。监督学习的训练集要求包括输入输出，也可以说是特征和目标。训练集中的目标是由人标注的。监督学习就是最常见的分类（注意和聚类区分）问题，通过已有的训练样本（即已知数据及其对应的输出）去训练得到一个最优模型（这个模型属于某个函数的集合，最优表示某个评价准则下是最佳的），再利用这个模型将所有的输入映射为相应">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/images/ML_01.jpg">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/517705/1600782955679-55c96689-f346-4b8d-8060-d2f7daf1b17b.jpeg#align=left&amp;display=inline&amp;height=246&amp;margin=%5Bobject%20Object%5D&amp;originHeight=849&amp;originWidth=1582&amp;size=0&amp;status=done&amp;style=none&amp;width=458">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/517705/1600782955564-7967949b-68f1-4e24-9c80-189c6e24fd72.jpeg#align=left&amp;display=inline&amp;height=305&amp;margin=%5Bobject%20Object%5D&amp;originHeight=930&amp;originWidth=1343&amp;size=0&amp;status=done&amp;style=none&amp;width=440">
+<meta property="og:image" content="http://yoursite.com/images/ML_02.jpg">
+<meta property="og:image" content="http://yoursite.com/images/ML_03.jpg">
 <meta property="article:published_time" content="2020-07-23T08:39:27.000Z">
-<meta property="article:modified_time" content="2020-09-25T09:50:41.056Z">
+<meta property="article:modified_time" content="2020-09-25T10:07:15.131Z">
 <meta property="article:author" content="Alert Wang">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
@@ -420,12 +420,31 @@
 <h3 id="SLIQ"><a href="#SLIQ" class="headerlink" title="SLIQ"></a>SLIQ</h3><p><a name="GLkb1"></a></p>
 <h2 id="线性分类"><a href="#线性分类" class="headerlink" title="线性分类"></a>线性分类</h2><p><a name="bOm3e"></a></p>
 <h3 id="Fisher线性判别"><a href="#Fisher线性判别" class="headerlink" title="Fisher线性判别"></a>Fisher线性判别</h3><p><a name="R7RTd"></a></p>
-<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p><br /><strong>线性回归模型：</strong><br /><strong><br />$h_\theta(x)=\theta_0+\theta_1 x_1 \tag{1}$<br /></strong>代价函数：<br /><br /><strong>$J(\theta_0,\theta_1)=\frac{1}{2m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^i)^2\tag{2}$</strong></p>
-<p>我们的目的是将梯度下降算法应用到线性回归中，最小化$J(\theta_0,\theta_1)$。<br />关键在于确定$\frac{\partial}{\partial \theta_j}J(\theta_0,\theta_1)<br>$<br />推导</p>
-<p>$\begin{align}<br>\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1)&amp;=\frac{\partial}{\partial\theta_j}\frac{1}{2m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2\\&amp;=\frac{\partial}{\partial\theta_j}\frac{1}{2m}\sum ^m_{i=1}(\theta_0+\theta_1x^{(i)}-y^{(i)})^2<br>\end{align}\tag{3}$</p>
-<p>当j=0时</p>
-<p>$\begin{align}<br>\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)&amp;=\frac{1}{m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})<br>\end{align}\tag{4}$</p>
-<p>当j=1时<br /><br><br />$\begin{align}<br>\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)&amp;=\frac{1}{m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}<br>\end{align}\tag{5}$<br /><br><br /><br><br />现在梯度下降算法就可以表示为<br />重复直到收敛<br /><br><br />$\begin{align}<br>&amp;\theta_0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\<br>&amp;\theta_1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}<br>\end{align}\tag{6}$<br /><br><br />下面时梯度下降的示意图<br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/517705/1600782955679-55c96689-f346-4b8d-8060-d2f7daf1b17b.jpeg#align=left&amp;display=inline&amp;height=246&amp;margin=%5Bobject%20Object%5D&amp;originHeight=849&amp;originWidth=1582&amp;size=0&amp;status=done&amp;style=none&amp;width=458" alt=""><br /><strong>梯度下降算法会根据不同初始点的选取陷入不同的局部最小。但是就线性回归问题而言，它的代价函数的图形总是凸面函数。</strong><br /><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/517705/1600782955564-7967949b-68f1-4e24-9c80-189c6e24fd72.jpeg#align=left&amp;display=inline&amp;height=305&amp;margin=%5Bobject%20Object%5D&amp;originHeight=930&amp;originWidth=1343&amp;size=0&amp;status=done&amp;style=none&amp;width=440" alt=""><br /><br><br />算法<br /><br><br />$\begin{align}<br>&amp;temp0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\<br>&amp;temp1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}\\<br>&amp;\theta_0:=temp0\\<br>&amp;\theta_1:=temp1\\<br>\end{align}\tag{7}$<br /><br><br />下面这种算法是错误的，这样在计算<script type="math/tex">\theta_1</script>时<script type="math/tex">\theta_0</script>已经更新，不能实现同步更新。<br /><br><br />$\begin{align}<br>&amp;temp0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\<br>&amp;\theta_0:=temp0\\<br>&amp;temp1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}\\<br>&amp;\theta_1:=temp1\\<br>\end{align}\tag{X}$<br /></p>
+<h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p><br /><strong>线性回归模型：</strong><br /><strong><br /><script type="math/tex">h_\theta(x)=\theta_0+\theta_1 x_1 \tag{1}</script><br /></strong>代价函数：<strong><br /></strong><br /><strong><script type="math/tex">J(\theta_0,\theta_1)=\frac{1}{2m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^i)^2\tag{2}</script></strong></p>
+<p>我们的目的是将梯度下降算法应用到线性回归中，最小化<script type="math/tex">J(\theta_0,\theta_1)</script>。<br />关键在于确定$$\frac{\partial}{\partial \theta_j}J(\theta_0,\theta_1)</p>
+<script type="math/tex; mode=display"><br />推导
+
+$$\begin{align}
+\frac{\partial}{\partial\theta_j}J(\theta_0,\theta_1)&=\frac{\partial}{\partial\theta_j}\frac{1}{2m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})^2\\&=\frac{\partial}{\partial\theta_j}\frac{1}{2m}\sum ^m_{i=1}(\theta_0+\theta_1x^{(i)}-y^{(i)})^2
+\end{align}\tag{3}</script><p>当j=0时</p>
+<script type="math/tex; mode=display">\begin{align}
+\frac{\partial}{\partial\theta_0}J(\theta_0,\theta_1)&=\frac{1}{m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})
+\end{align}\tag{4}</script><p>当j=1时<br /><br><br /><script type="math/tex">\begin{align}
+\frac{\partial}{\partial\theta_1}J(\theta_0,\theta_1)&=\frac{1}{m}\sum ^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}
+\end{align}\tag{5}</script><br /><br><br /><br><br />现在梯度下降算法就可以表示为<br />重复直到收敛<br /><br><br /><script type="math/tex">\begin{align}
+&\theta_0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\
+&\theta_1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}
+\end{align}\tag{6}</script><br /><br><br />下面时梯度下降的示意图<br /><img src="/images/ML_02.jpg" alt=""><br /><strong>梯度下降算法会根据不同初始点的选取陷入不同的局部最小。但是就线性回归问题而言，它的代价函数的图形总是凸面函数。</strong><br /><img src="/images/ML_03.jpg" alt=""><br /><br><br />算法<br /><br><br /><script type="math/tex">\begin{align}
+&temp0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\
+&temp1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}\\
+&\theta_0:=temp0\\
+&\theta_1:=temp1\\
+\end{align}\tag{7}</script><br /><br><br />下面这种算法是错误的，这样在计算<script type="math/tex">\theta_1</script>时<script type="math/tex">\theta_0</script>已经更新，不能实现同步更新。<br /><br><br /><script type="math/tex">\begin{align}
+&temp0:=\theta_0-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})\\
+&\theta_0:=temp0\\
+&temp1:=\theta_1-\alpha \frac{1}{m}\sum^m_{i=1}(h_\theta(x^{(i)})-y^{(i)})x^{(i)}\\
+&\theta_1:=temp1\\
+\end{align}\tag{X}</script><br /></p>
 <p><a name="DIN59"></a></p>
 <h3 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h3><p><a name="biSgP"></a></p>
 <h3 id="多项逻辑回归"><a href="#多项逻辑回归" class="headerlink" title="多项逻辑回归"></a>多项逻辑回归</h3><p><a name="JrZ2d"></a></p>
