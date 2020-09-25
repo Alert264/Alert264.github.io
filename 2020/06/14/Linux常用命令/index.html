@@ -401,7 +401,7 @@
 <h3 id="一、基本命令"><a href="#一、基本命令" class="headerlink" title="一、基本命令"></a>一、基本命令</h3><h4 id="1-用户操作"><a href="#1-用户操作" class="headerlink" title="1. 用户操作"></a>1. 用户操作</h4><p># 表示权限用户(如:root),$ 表示普通用户<br>开机提示:Login:输入用户名<br>password:输入口令 用户是系统注册用户成功登陆后，可以进入相应的用户环境.<br>退出当前shell,输入:exit</p>
 <p>useradd netseek 添加一个netseek用户<br>passwd netseek 给netseek这个用户设置密码.<br>(/etc/passwd /etc/group)<br>userdel netseek 删除账号<br>userdel -r netseek 删除账号连同自家目录</p>
 <h4 id="2-设置linux时间和日期"><a href="#2-设置linux时间和日期" class="headerlink" title="2. 设置linux时间和日期"></a>2. 设置linux时间和日期</h4><p>date 命令(“date MMDDhhmmYYYY.ss”)<br>2006年7月24日12:37 ,30秒<br>date 072412372006.30<br>date -s 20:30:30 #设置系统时间为20: 30:30<br>date -s 2006-7-24 #设置系统时期为2006-7-24<br>clock -r #对系统Bios中读取时间参数<br>clock -w #将系统时间(如由date设置的时间)写入Bios</p>
-<h3 id="二、文件-文件夹操作"><a href="#二、文件-文件夹操作" class="headerlink" title="二、文件/文件夹操作"></a>二、文件/文件夹操作</h3><h4 id="1-查看操作"><a href="#1-查看操作" class="headerlink" title="1. 查看操作"></a>1. 查看操作</h4><p>ls -l 显示文件列表<br>ls -al -a 显示所有档案及目录 (ls内定将档案名或目录名称开头为”.”的视为隐藏档，不会列出)<br>ls -al |grep ‘^d’ 显示目录<br>ls -al |grep ‘^[^d]’ 在一个目录中查询不包含目录的所有文件<br>ls -sh (man ls 查看man帮助.)</p>
+<h3 id="二、文件-文件夹操作"><a href="#二、文件-文件夹操作" class="headerlink" title="二、文件/文件夹操作"></a>二、文件/文件夹操作</h3><h4 id="1-查看操作"><a href="#1-查看操作" class="headerlink" title="1. 查看操作"></a>1. 查看操作</h4><p>ls -l 显示文件列表<br>ls -al -a 显示所有档案及目录 (ls内定将档案名或目录名称开头为”.”的视为隐藏档，不会列出)<br>ls -al |grep ‘^d’ 显示目录<br>ls -al |grep ‘^<sup><a href="#fn_d" id="reffn_d">d</a></sup>‘ 在一个目录中查询不包含目录的所有文件<br>ls -sh (man ls 查看man帮助.)</p>
 <h4 id="2-linux几种文件类型"><a href="#2-linux几种文件类型" class="headerlink" title="2. linux几种文件类型:"></a>2. linux几种文件类型:</h4><p>d 表示此文件是一个目录<br>- 表示此文件是一个普通文件<br>b 表示此文件是一个特殊的块设备I/O文件<br>c 表示此文件是一个特殊的字符设备I/O文件<br>l 表示此文件是一个连接文件。在其文件名称后紧跟与它连接的文件路径及名称</p>
 <h4 id="3-建立文件和目录"><a href="#3-建立文件和目录" class="headerlink" title="3. 建立文件和目录"></a>3. 建立文件和目录</h4><p>touch 1.txt<br>cat &gt; 2.txt (用定向符创建文件，填写内容后，按ctrl+d保存内容)<br>mkdir mywork 建立mywork这个目录</p>
 <h4 id="4-拷贝文件或目录"><a href="#4-拷贝文件或目录" class="headerlink" title="4. 拷贝文件或目录"></a>4. 拷贝文件或目录</h4><p>cp filename1 filename2<br>cp -r dir1 dir2 复制目录<br>cp -rf 参数f是删除已经存在的目标文件而不提示<br>cp -i 参数i和f相反，在覆盖目标文件之前将给出提示要求用户确认，回答y时目标文件将被覆盖，是交互式拷贝.</p>
@@ -950,6 +950,8 @@
   
 
   
+  
+
 
   
 

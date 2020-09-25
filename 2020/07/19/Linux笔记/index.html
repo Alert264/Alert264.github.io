@@ -460,6 +460,7 @@
 <li>每一个目标都有名字和独特的功能，并且能够同时启用多个。一些目标继承其他目标的服务，并启动新服务。<br>systemd提供了一些模仿SystemVinit启动级别的目标，仍可以使用旧的telinit启动级别命令切换。</li>
 <li>预定义目标和运行级别对应关系</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -469,7 +470,8 @@
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0</td>
 <td>poweroff.target</td>
 <td>runlevel0.target</td>
@@ -511,7 +513,9 @@
 <td>runlevel6.target</td>
 <td>重启系统</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="2-在Linux系统下获取帮助"><a href="#2-在Linux系统下获取帮助" class="headerlink" title="2.在Linux系统下获取帮助"></a>2.在Linux系统下获取帮助</h3><ul>
 <li><h4 id="使用man手册页"><a href="#使用man手册页" class="headerlink" title="使用man手册页"></a><strong>使用man手册页</strong></h4><ul>
 <li>一般情况下，Linux系统中所有的资源都会随操作系统一起发行，包括内核源代码。而在线手册是操作系统所有资源的一本很好的使用手册。有不懂的命令时可以用man查看这个命令，写程序时有不会用的函数可以用man查看这个函数，有不懂的文件时也可以用man查看文件。</li>
@@ -524,52 +528,56 @@
 </li>
 <li><h4 id="man手册页类型"><a href="#man手册页类型" class="headerlink" title="man手册页类型"></a><strong>man手册页类型</strong></h4></li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">类型</th>
-<th align="left">描述</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="left">用户命令</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">用户命令</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left">系统调用</td>
+<td style="text-align:center">2</td>
+<td style="text-align:left">系统调用</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="left">C语言函数库</td>
+<td style="text-align:center">3</td>
+<td style="text-align:left">C语言函数库</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="left">设备和特殊文件</td>
+<td style="text-align:center">4</td>
+<td style="text-align:left">设备和特殊文件</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="left">文件格式和约定</td>
+<td style="text-align:center">5</td>
+<td style="text-align:left">文件格式和约定</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="left">游戏程序</td>
+<td style="text-align:center">6</td>
+<td style="text-align:left">游戏程序</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="left">杂记</td>
+<td style="text-align:center">7</td>
+<td style="text-align:left">杂记</td>
 </tr>
 <tr>
-<td align="center">8</td>
-<td align="left">系统管理工具</td>
+<td style="text-align:center">8</td>
+<td style="text-align:left">系统管理工具</td>
 </tr>
 <tr>
-<td align="center">9</td>
-<td align="left">Linux内核API（内核调用）</td>
+<td style="text-align:center">9</td>
+<td style="text-align:left">Linux内核API（内核调用）</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
-<li><h4 id="使用–help选项获取帮助"><a href="#使用–help选项获取帮助" class="headerlink" title="使用–help选项获取帮助"></a><strong>使用–help选项获取帮助</strong></h4><p>使用–help选项可以显示命令的使用方法以及命令选项的含义。只要在所需要显示的命令后面输入“–help”选项，然后就可以看到所查命令的帮助内容了。<br>命令语法：<br>[命令]–help.<br>[例3.9]查看mkdir命令的帮助信息。<br><code>[root@rhel ~]# mkdir --help</code></p>
+<li><h4 id="使用—help选项获取帮助"><a href="#使用—help选项获取帮助" class="headerlink" title="使用—help选项获取帮助"></a><strong>使用—help选项获取帮助</strong></h4><p>使用—help选项可以显示命令的使用方法以及命令选项的含义。只要在所需要显示的命令后面输入“—help”选项，然后就可以看到所查命令的帮助内容了。<br>命令语法：<br>[命令]—help.<br>[例3.9]查看mkdir命令的帮助信息。<br><code>[root@rhel ~]# mkdir --help</code></p>
 </li>
 </ul>
 <h3 id="3-Shell基础"><a href="#3-Shell基础" class="headerlink" title="3.Shell基础"></a>3.Shell基础</h3><ul>
@@ -588,33 +596,32 @@
 <li>bash的命令语法是Bourne shell命令语法的超集。数量庞大的Bourne shell脚本大多不经过修改就可以在bash中执行，只有那些引用了Bourne特殊变量或使用了Bourne内置命令的脚本才需要修改。bash的命令语法很多来自ksh和csh，比如命令行编辑、命令历史、目录栈、$RANDOM变量、$PPID变量以及POSIX命令置换语法。</li>
 </ul>
 </li>
-<li><p>bash命令</p>
-<ul>
+<li>bash命令<ul>
 <li>Linux系统的标准提示符包括了用户登录名、登录的主机名、当前所在的工作目录路径和提示符号。<br>以普通用户zhangsan登录名为rhel的主机，他的工作目录是/home/zhangsan，如下所示。<br><code>[zhangsan@rhel ~]$</code><br>以root用户登录系统的提示符如下所示。<br><code>[root@rhel ~]#</code></li>
 </ul>
 </li>
-<li><p>Shell命令一般格 式</p>
-<ul>
+<li>Shell命令一般格 式<ul>
 <li>要运行命令的话，只需要在提示符后敲进命令，然后再按“回车”键。<br>命令语法：<br>[Shell命令][选项][参数]</li>
 <li>所有选项在该命令的man手册页中都有详细的介绍，而参数则由用户提供。选项决定命令如何工作，而参数则用于确定命令作用的目标。</li>
 <li>选项有短命令行选项和长命令选项两种。</li>
 </ul>
 </li>
-<li><p>Linux系统命令分类</p>
-<ul>
+<li>Linux系统命令分类<ul>
 <li>bash内置的命令<br>如果是bash内置的命令，则由bash负责回应。</li>
 <li>应用程序<br>如果是应用程序，那么Shell会找出该应用程序，然后将控制权交给内核，由内核执行该应用程序，执行完之后，再将控制权交回给Shell。</li>
 </ul>
 </li>
 </ul>
-<h3 id="4-使用bash"><a href="#4-使用bash" class="headerlink" title="4.使用bash"></a>4.使用bash</h3><h4 id="1、常用控制组合键"><a href="#1、常用控制组合键" class="headerlink" title="1、常用控制组合键"></a><strong>1、常用控制组合键</strong></h4><table>
+<h3 id="4-使用bash"><a href="#4-使用bash" class="headerlink" title="4.使用bash"></a>4.使用bash</h3><h4 id="1、常用控制组合键"><a href="#1、常用控制组合键" class="headerlink" title="1、常用控制组合键"></a><strong>1、常用控制组合键</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>控制组合键</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Ctrl+l</td>
 <td>清屏</td>
 </tr>
@@ -646,15 +653,19 @@
 <td>Ctrl+d</td>
 <td>输入结束，即EOF的意思，或者注销Linux系统</td>
 </tr>
-</tbody></table>
-<h4 id="2、光标操作"><a href="#2、光标操作" class="headerlink" title="2、光标操作"></a><strong>2、光标操作</strong></h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="2、光标操作"><a href="#2、光标操作" class="headerlink" title="2、光标操作"></a><strong>2、光标操作</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>组合键</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Ctrl+a</td>
 <td>移动光标到命令行首</td>
 </tr>
@@ -734,15 +745,19 @@
 <td>Alt+Backspace</td>
 <td>与Ctrl+w功能类似，分隔符有些差别</td>
 </tr>
-</tbody></table>
-<h4 id="3、特殊字符"><a href="#3、特殊字符" class="headerlink" title="3、特殊字符"></a><strong>3、特殊字符</strong></h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="3、特殊字符"><a href="#3、特殊字符" class="headerlink" title="3、特殊字符"></a><strong>3、特殊字符</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>~</td>
 <td>用户主目录</td>
 </tr>
@@ -775,7 +790,8 @@
 <td>使命令持续到下一行</td>
 </tr>
 <tr>
-<td>|</td>
+<td>\</td>
+<td></td>
 <td>管道</td>
 </tr>
 <tr>
@@ -806,15 +822,19 @@
 <td>;</td>
 <td>命令分隔符</td>
 </tr>
-</tbody></table>
-<h4 id="4、通配符"><a href="#4、通配符" class="headerlink" title="4、通配符"></a><strong>4、通配符</strong></h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="4、通配符"><a href="#4、通配符" class="headerlink" title="4、通配符"></a><strong>4、通配符</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>符号</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>？</td>
 <td>代表任何单一字符</td>
 </tr>
@@ -830,7 +850,9 @@
 <td>[!字符组合]</td>
 <td>不在中括号中的字符都符合，比如[!0-9]代表非数字的都符合</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="5-Shell实用功能"><a href="#5-Shell实用功能" class="headerlink" title="5.Shell实用功能"></a>5.Shell实用功能</h3><h4 id="1、命令行自动补全"><a href="#1、命令行自动补全" class="headerlink" title="1、命令行自动补全"></a><strong>1、命令行自动补全</strong></h4><ul>
 <li><p>在Linux系统中，有太多的命令和文件名称需要记忆，使用命令行补全功能可以快速的写出文件名和命令名。<br>如果需要快速地从当前所在的目录跳转到<br>/usr/src/kernels/目录，可以执行以下操作。<br><code>[root@rhel ~]# cd /u&lt;Tab&gt;/sr&lt;Tab&gt;/k&lt;Tab&gt;</code></p>
 <p><Tab>是按”Tab”键的意思，使用”Tab”键也称为命令行自动补全，这在平常应用中是不可缺少的</p>
@@ -842,14 +864,16 @@
 <li>使用history命令可以查看命令历史记录，每一条命令前面都会有一个序列号标示。<br>命令语法：history[选项]</li>
 <li>Ctrl+R 使用历史记录中的命令</li>
 </ul>
-<h4 id="3、使用命令历史"><a href="#3、使用命令历史" class="headerlink" title="3、使用命令历史"></a><strong>3、使用命令历史</strong></h4><table>
+<h4 id="3、使用命令历史"><a href="#3、使用命令历史" class="headerlink" title="3、使用命令历史"></a><strong>3、使用命令历史</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>举例</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>!!</td>
 <td>运行上一个命令</td>
 </tr>
@@ -882,7 +906,7 @@
 <td>编辑并运行第6条历史命令</td>
 </tr>
 <tr>
-<td>^boot^root^</td>
+<td>\^boot\^root\^</td>
 <td>快速替换。将最后一个命合中的boot替换为root后运行</td>
 </tr>
 <tr>
@@ -893,16 +917,20 @@
 <td>!$</td>
 <td>运行前一个命令最后的参数</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>[例3.11]使用命令历史记录功能键。<br><code>[root@rhel ~]# mkdir/root/aaa</code><br>//创建目录/root/aaa<br><code>[root@rhel ~]# cd !$</code><br><code>cd/root/aaa</code><br>//!$是指重复前一个命令最后的参数，参数是/root/aaa<br><code>[root@rhel aaa]# pwd</code><br><code>/root/aaa</code><br>//显示用户当前目录是/root/aaa</p>
-<h4 id="4、搜索历史命令"><a href="#4、搜索历史命令" class="headerlink" title="4、搜索历史命令"></a><strong>4、搜索历史命令</strong></h4><table>
+<h4 id="4、搜索历史命令"><a href="#4、搜索历史命令" class="headerlink" title="4、搜索历史命令"></a><strong>4、搜索历史命令</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>快捷键</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>↑</td>
 <td>查看上一个命令</td>
 </tr>
@@ -930,7 +958,9 @@
 <td>Alt+&gt;</td>
 <td>移动到历史列表末尾</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="5、命令排列"><a href="#5、命令排列" class="headerlink" title="5、命令排列"></a><strong>5、命令排列</strong></h4><ul>
 <li><p>如果希望一次执行多个命令，Shell允许在不同的命令之间，放上特殊的排列字符。</p>
 <ul>
@@ -953,7 +983,7 @@
 </ul>
 <h4 id="8、管道"><a href="#8、管道" class="headerlink" title="8、管道"></a><strong>8、管道</strong></h4><ul>
 <li>Linux系统的理念是汇集许多小程序，每个程序都有特殊的专长。复杂的任务不是由大型软件完成，而是运用Shell的机制，组合许多小程序共同完成。管道就在其中发挥着重要的作用，它可以将某个命令的输出信息当作某个命令的输入，由管道符号“|”来标识。<br>命令语法：<br>[命令1]|[命令2]|[命令3]<ul>
-<li>[例3.22]<br>使用简单的管道。<br><code>[root@rhel ~]#Is/etc|more</code><br>abr<br>tacpi<br>adjtime<br>akonadi<br>–More–<br>//命令|s/etc显示/etc目录的内容，命令more是分页显示内容</li>
+<li>[例3.22]<br>使用简单的管道。<br><code>[root@rhel ~]#Is/etc|more</code><br>abr<br>tacpi<br>adjtime<br>akonadi<br>—More—<br>//命令|s/etc显示/etc目录的内容，命令more是分页显示内容</li>
 <li>[例3.23]<br>使用复杂的管道。<br><code>[root@PC-LINUX ~]#rpm -qa|grep a|more</code><br>//命令rpm-qa显示已经安装在系统上的RPM包，命令grepa是过滤软件包，命令more是分页显示这些信息</li>
 </ul>
 </li>
@@ -978,7 +1008,7 @@
 <li>[例3.27]使用输入重定向将文件/root/mm的内容作为输入让cat命令执行。<br><code>[root@rhel ~]#cat &lt;/root/mm</code><br>Hello<br>//可以看到文件/root/mm的内容是Hello</li>
 </ul>
 </li>
-<li><p>另外一种特殊的输入重定向是输入追加重定向，这种输入重定向告诉Shell，当前标准输入来自命令行的一对分隔符之间的内容。<br>命令语法：<br>[命令]&lt;&lt;[分隔符]<br>&gt;[文本内容]<br>&gt;[分隔符]</p>
+<li><p>另外一种特殊的输入重定向是输入追加重定向，这种输入重定向告诉Shell，当前标准输入来自命令行的一对分隔符之间的内容。<br>命令语法：<br>[命令]&lt;&lt;[分隔符]<br>>[文本内容]<br>>[分隔符]</p>
 <ul>
 <li>[例3.28]使用输入追加重定向创建/root/bc文件。<br><code>[root@rhel ~]#cat &gt;/root/bc &lt;&lt;EOF</code><br><code>\&gt;Hello Linux</code><br><code>\&gt;EOF</code><br>//一般使用EOF作为分隔符</li>
 </ul>
@@ -1016,219 +1046,229 @@
 <li>将文件保存或退出vi编辑器，也可以设置 编辑环境、替换字符或删除字符。</li>
 <li>在末行模式下按“Esc”键可以回到命令模式。</li>
 </ul>
-<h4 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a><strong>进入插入模式</strong></h4><table>
+<h4 id="进入插入模式"><a href="#进入插入模式" class="headerlink" title="进入插入模式"></a><strong>进入插入模式</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">命令</th>
+<th style="text-align:center">命令</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">i</td>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
 <td>从光标当前所在位置之前开始插入</td>
 </tr>
 <tr>
-<td align="center">a</td>
+<td style="text-align:center">a</td>
 <td>从光标当前所在位置之后开始插入</td>
 </tr>
 <tr>
-<td align="center">I</td>
+<td style="text-align:center">I</td>
 <td>在光标所在行的行首插入</td>
 </tr>
 <tr>
-<td align="center">A</td>
+<td style="text-align:center">A</td>
 <td>在光标所在行的行末尾插入</td>
 </tr>
 <tr>
-<td align="center">o</td>
+<td style="text-align:center">o</td>
 <td>在光标所在的行的下面新开一行插入</td>
 </tr>
 <tr>
-<td align="center">O</td>
+<td style="text-align:center">O</td>
 <td>在光标所在的行的上面新开一行插入</td>
 </tr>
 <tr>
-<td align="center">s</td>
+<td style="text-align:center">s</td>
 <td>在光标所在的行的上面新开一行插入</td>
 </tr>
 <tr>
-<td align="center">S</td>
+<td style="text-align:center">S</td>
 <td>删除光标所在的行，然后进入插入模式</td>
 </tr>
-</tbody></table>
-<h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a><strong>光标移动</strong></h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a><strong>光标移动</strong></h4><div class="table-container">
+<table>
 <thead>
 <tr>
-<th align="center">命令</th>
+<th style="text-align:center">命令</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">↑</td>
+<tbody>
+<tr>
+<td style="text-align:center">↑</td>
 <td>使光标向上移动一行</td>
 </tr>
 <tr>
-<td align="center">↓</td>
+<td style="text-align:center">↓</td>
 <td>使光标向下移动一行</td>
 </tr>
 <tr>
-<td align="center">←</td>
+<td style="text-align:center">←</td>
 <td>使光标向左移动一行</td>
 </tr>
 <tr>
-<td align="center">→</td>
+<td style="text-align:center">→</td>
 <td>使光标向右移动一行</td>
 </tr>
 <tr>
-<td align="center">k</td>
+<td style="text-align:center">k</td>
 <td>使光标向上移动一行</td>
 </tr>
 <tr>
-<td align="center">j</td>
+<td style="text-align:center">j</td>
 <td>使光标向下移动一行</td>
 </tr>
 <tr>
-<td align="center">h</td>
+<td style="text-align:center">h</td>
 <td>使光标向左移动一行</td>
 </tr>
 <tr>
-<td align="center">l</td>
+<td style="text-align:center">l</td>
 <td>使光标向右移动一行</td>
 </tr>
 <tr>
-<td align="center">nk</td>
+<td style="text-align:center">nk</td>
 <td>使光标向上移动n行，n代表数字</td>
 </tr>
 <tr>
-<td align="center">nj</td>
+<td style="text-align:center">nj</td>
 <td>使光标向下移动n行，n代表数字</td>
 </tr>
 <tr>
-<td align="center">nh</td>
+<td style="text-align:center">nh</td>
 <td>使光标向左移动n个字符，n代表数字</td>
 </tr>
 <tr>
-<td align="center">nl</td>
+<td style="text-align:center">nl</td>
 <td>使光标向右移动n个字符，n代表数字</td>
 </tr>
 <tr>
-<td align="center">H</td>
+<td style="text-align:center">H</td>
 <td>使光标移动到屏幕的顶部</td>
 </tr>
 <tr>
-<td align="center">M</td>
+<td style="text-align:center">M</td>
 <td>使光标移动到屏幕的中间</td>
 </tr>
 <tr>
-<td align="center">L</td>
+<td style="text-align:center">L</td>
 <td>使光标移动到屏幕的底部</td>
 </tr>
 <tr>
-<td align="center">Ctrl+b</td>
+<td style="text-align:center">Ctrl+b</td>
 <td>使光标往上移动一页屏幕</td>
 </tr>
 <tr>
-<td align="center">Ctrl+f</td>
+<td style="text-align:center">Ctrl+f</td>
 <td>使光标往下移动一页屏幕</td>
 </tr>
 <tr>
-<td align="center">Ctrl+u</td>
+<td style="text-align:center">Ctrl+u</td>
 <td>使光标往上移动半页屏幕</td>
 </tr>
 <tr>
-<td align="center">Ctrl+d</td>
+<td style="text-align:center">Ctrl+d</td>
 <td>使光标往下移动半页屏幕</td>
 </tr>
 <tr>
-<td align="center">数字0</td>
+<td style="text-align:center">数字0</td>
 <td>使光标移到所在行的行首</td>
 </tr>
 <tr>
-<td align="center">$</td>
+<td style="text-align:center">$</td>
 <td>使光标移动到光标所在行的行尾</td>
 </tr>
 <tr>
-<td align="center">^</td>
+<td style="text-align:center">^</td>
 <td>使光标移动到光标所在行的行首</td>
 </tr>
 <tr>
-<td align="center">w</td>
+<td style="text-align:center">w</td>
 <td>使光标跳到下一个字的开头</td>
 </tr>
 <tr>
-<td align="center">W</td>
+<td style="text-align:center">W</td>
 <td>使光标跳到下一个字的开头，但会忽略一些标点符号</td>
 </tr>
 <tr>
-<td align="center">e</td>
+<td style="text-align:center">e</td>
 <td>使光标跳到下一个字的字尾</td>
 </tr>
 <tr>
-<td align="center">E</td>
+<td style="text-align:center">E</td>
 <td>使光标跳到下一个字的字尾，但会忽略一些标点符号</td>
 </tr>
 <tr>
-<td align="center">b</td>
+<td style="text-align:center">b</td>
 <td>使光标回到上一个字的开头</td>
 </tr>
 <tr>
-<td align="center">B</td>
+<td style="text-align:center">B</td>
 <td>使光标回到上一个字的开头，但会忽略一些标点符号</td>
 </tr>
 <tr>
-<td align="center">(</td>
+<td style="text-align:center">(</td>
 <td>使光标移动到上一个句首</td>
 </tr>
 <tr>
-<td align="center">)</td>
+<td style="text-align:center">)</td>
 <td>使光标移动到下一个句首</td>
 </tr>
 <tr>
-<td align="center">{</td>
+<td style="text-align:center">{</td>
 <td>使光标移动到上一个段落首</td>
 </tr>
 <tr>
-<td align="center">}</td>
+<td style="text-align:center">}</td>
 <td>使光标移动到下一个段落首</td>
 </tr>
 <tr>
-<td align="center">G</td>
+<td style="text-align:center">G</td>
 <td>使光标移动到文件尾（最后一行的第一个非空白字符处）</td>
 </tr>
 <tr>
-<td align="center">gg</td>
+<td style="text-align:center">gg</td>
 <td>使光标移动到文件首（第一行第一个非空白字符处）</td>
 </tr>
 <tr>
-<td align="center">Ctrl+p</td>
+<td style="text-align:center">Ctrl+p</td>
 <td>使光标向上移动一行</td>
 </tr>
 <tr>
-<td align="center">Ctrl+n</td>
+<td style="text-align:center">Ctrl+n</td>
 <td>使光标向下移动一行</td>
 </tr>
 <tr>
-<td align="center">n|</td>
+<td style="text-align:center">n\</td>
+<td></td>
 <td>使光标移动到第n个字符处，n代表数字</td>
 </tr>
 <tr>
-<td align="center">nG</td>
+<td style="text-align:center">nG</td>
 <td>使光标移动到第n行首，n代表数字</td>
 </tr>
 <tr>
-<td align="center">n+</td>
+<td style="text-align:center">n+</td>
 <td>使光标向下移动n行，n代表数字</td>
 </tr>
 <tr>
-<td align="center">n-</td>
+<td style="text-align:center">n-</td>
 <td>使光标向上移动n行，n代表数字</td>
 </tr>
 <tr>
-<td align="center">n$</td>
+<td style="text-align:center">n$</td>
 <td>使光标移动到以当前行算起的第n行尾，n代表数</td>
 </tr>
-</tbody></table>
-<h4 id="命令模式命令"><a href="#命令模式命令" class="headerlink" title="命令模式命令"></a>命令模式命令</h4><table>
+</tbody>
+</table>
+</div>
+<h4 id="命令模式命令"><a href="#命令模式命令" class="headerlink" title="命令模式命令"></a>命令模式命令</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>类型</th>
@@ -1236,7 +1276,8 @@
 <th>功能</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>删除</td>
 <td>x</td>
 <td>删除光标所在位置的字符</td>
@@ -1396,29 +1437,32 @@
 <td>?</td>
 <td>先按[?]键，再输入想查找的字符，如果第一.次查找的关键字不是想要的，可以一直按[n]键会往前查找下一个关键字，而按[N]键会往相反的方向查找</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
 <p>update: 2020-7-20 20:49:22</p>
-<h2 id="四、目录和文件管理"><a href="#四、目录和文件管理" class="headerlink" title="四、目录和文件管理"></a>四、目录和文件管理</h2><pre><code>Linux系统与Windows系统有很大的不同， 它以目录的形式挂载文件系统，其目录结 构是一个分层的树形结构。链接是一种在 共享文件和访问它的用户的若干目录项之 间建立联系的方法，Linux系统中包括硬链接和软链接两种方式。</code></pre><h3 id="1-Linux文件类型"><a href="#1-Linux文件类型" class="headerlink" title="1.Linux文件类型"></a>1.Linux文件类型</h3><ul>
+<h2 id="四、目录和文件管理"><a href="#四、目录和文件管理" class="headerlink" title="四、目录和文件管理"></a>四、目录和文件管理</h2><pre><code>Linux系统与Windows系统有很大的不同， 它以目录的形式挂载文件系统，其目录结 构是一个分层的树形结构。链接是一种在 共享文件和访问它的用户的若干目录项之 间建立联系的方法，Linux系统中包括硬链接和软链接两种方式。
+</code></pre><h3 id="1-Linux文件类型"><a href="#1-Linux文件类型" class="headerlink" title="1.Linux文件类型"></a>1.Linux文件类型</h3><ul>
 <li>在Linux系统中除了一般文件之外，所有的目录和设备（如光驱、硬盘等）都是以文 件的形式存在的。 Linux文件类型和Linux文件的文件名所代表的意义是两个不同的概念。</li>
 <li>通过一般应用程序创建的文件，比如file.txt、file.tar.gz，这些文件虽然要用不同的程序来打开，但放在Linux文件类型中衡量的话，大多称之为普通文件。</li>
 <li>Linux文件类型常见的有：普通文件、目录文件、设备文件（字符设备文件和块设备文件）、管道文件和符号链接文件等。</li>
 </ul>
 <h4 id="1-普通文件"><a href="#1-普通文件" class="headerlink" title="1.普通文件"></a>1.普通文件</h4><ul>
-<li>用“ls -lh”命令查看某个文件的属性， 可以看到有类似“-rw——-”的属性符 号，其属性第一个符号是“-”，这样的文 件在Linux系统中就是普通文件。这些文件 一般是用一些相关的应用程序创建，比如<br>图像工具、文档工具或归档工具等。</li>
+<li>用“ls -lh”命令查看某个文件的属性， 可以看到有类似“-rw———-”的属性符 号，其属性第一个符号是“-”，这样的文 件在Linux系统中就是普通文件。这些文件 一般是用一些相关的应用程序创建，比如<br>图像工具、文档工具或归档工具等。</li>
 </ul>
 <h4 id="2-目录文件"><a href="#2-目录文件" class="headerlink" title="2.目录文件"></a>2.目录文件</h4><ul>
 <li>当在某个目录下执行“ls -lh”命令，看 到有类似“drwxr-xr-x”的属性符号，其 属性第一个符号是“d”，这样的文件在Linux系统中就是目录文件。</li>
 </ul>
 <h4 id="3-设备文件"><a href="#3-设备文件" class="headerlink" title="3.设备文件"></a>3.设备文件</h4><ul>
 <li>Linux系统中的/dev目录中有大量的设备文 件，主要是块设备文件和字符设备文件。<ul>
-<li>（1）块设备文件 块设备的主要特点是可以随机读写，而最 常见的块设备就是磁盘，如/dev/hda1、 /dev/sda1等。用“ls -l”命令查看某个文件的属性，可以看到有类似“brw-rw—”的属性符号，其属性第一个符号是 “b”，这样的文件在Linux系统中就是块设备文件。</li>
-<li>（2）字符设备文件 最常见的字符设备文件是打印机和终端， 可以接收字符流。/dev/null是一个非常有 用的字符设备文件，送入这个设备的所有 内容都被忽略。用“ls -l”命令查看某个文件的属性，可以看到有类似“crw–w—”的属性符号，其属性第一个符号是 “c”，这样的文件在Linux系统中就是字符设备文件。</li>
+<li>（1）块设备文件 块设备的主要特点是可以随机读写，而最 常见的块设备就是磁盘，如/dev/hda1、 /dev/sda1等。用“ls -l”命令查看某个文件的属性，可以看到有类似“brw-rw—-”的属性符号，其属性第一个符号是 “b”，这样的文件在Linux系统中就是块设备文件。</li>
+<li>（2）字符设备文件 最常见的字符设备文件是打印机和终端， 可以接收字符流。/dev/null是一个非常有 用的字符设备文件，送入这个设备的所有 内容都被忽略。用“ls -l”命令查看某个文件的属性，可以看到有类似“crw—w—-”的属性符号，其属性第一个符号是 “c”，这样的文件在Linux系统中就是字符设备文件。</li>
 </ul>
 </li>
 </ul>
 <h4 id="4-管道文件"><a href="#4-管道文件" class="headerlink" title="4.管道文件"></a>4.管道文件</h4><ul>
-<li>管道文件有时候也被叫做FIFO文件（FIFO 是先进先出的意思），管道文件就是从一 头流入，从另一头流出。用“ls -l”命令查看某个文件的属性，可以看到有类似 “prw——-”的属性符号，其属性第一 个符号是“p”，这样的文件在Linux系统中就是管道文件。</li>
+<li>管道文件有时候也被叫做FIFO文件（FIFO 是先进先出的意思），管道文件就是从一 头流入，从另一头流出。用“ls -l”命令查看某个文件的属性，可以看到有类似 “prw———-”的属性符号，其属性第一 个符号是“p”，这样的文件在Linux系统中就是管道文件。</li>
 </ul>
 <h4 id="5-链接文件"><a href="#5-链接文件" class="headerlink" title="5.链接文件"></a>5.链接文件</h4><ul>
 <li>链接文件有两种类型：软链接文件和硬链接文件。 <ul>
@@ -1439,14 +1483,16 @@
 <li>Linux系统都有根文件系统，它包含系统引 导和使其它文件系统得以挂载所必要的文 件，根文件系统需要有单用户状态所必须 的足够的内容，还应该包括修复损坏系统、 恢复备份等工具。</li>
 <li>Linux系统的目录结构是分层的树形结构，<br>都是挂载在根文件系统“/”下。</li>
 </ul>
-<h4 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h4><table>
+<h4 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>目录</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>/home</td>
 <td>包含Linux系统上各用户的主目录，子目录名称默认以该用户 名命名</td>
 </tr>
@@ -1522,7 +1568,9 @@
 <td>/proc</td>
 <td>是一个虚拟的文件系统，它不存在磁盘上，而是由内核在内存中产生， 用于提供系统的相关信息。 下面说明在/proc目录下的一些最重要的文件。<br/>/proc/cpuinfo：该文件保存计算机CPU信息。 <br/>/proc/filesystems：该文件保存Linux文件系统信息。 <br/>/proc/ioports：该文件保存计算机I/O端口号信息。 <br/>/proc/version：该文件保存Linux系统版本信息。<br/>/proc/meminfo：该文件保存计算机内存信息。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="3-文件和目录操作"><a href="#3-文件和目录操作" class="headerlink" title="3.文件和目录操作"></a>3.文件和目录操作</h3><ul>
 <li>本节主要讲述在Linux系统下如何使用命令 对文件和目录进行操作，涉及的命令有pwd、cd、ls、touch、mkdir、rmdir、cp、mv、rm、wc等。</li>
 </ul>
@@ -1539,42 +1587,46 @@
 <li>命令语法：ls [选项] [目录|文件]</li>
 </ul>
 <p><strong>ls命令显示的详细信息</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">列数</th>
+<th style="text-align:center">列数</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
 <td>第1个字符表示文件的类型 <br/>第2～4个字符表示文件的用户所有者对此文件的访问权限 <br/>第5～7个字符表示文件的组群所有者对此文件的访问权限<br/>第8～10个字符表示其他用户对此文件的访问权限</td>
 </tr>
 <tr>
-<td align="center">2</td>
+<td style="text-align:center">2</td>
 <td>文件的链接数</td>
 </tr>
 <tr>
-<td align="center">3</td>
+<td style="text-align:center">3</td>
 <td>文件的用户所有者</td>
 </tr>
 <tr>
-<td align="center">4</td>
+<td style="text-align:center">4</td>
 <td>文件的组群所有者</td>
 </tr>
 <tr>
-<td align="center">5</td>
+<td style="text-align:center">5</td>
 <td>文件长度（也就是文件大小，不是文件的磁盘占用量）</td>
 </tr>
 <tr>
-<td align="center">6~8</td>
+<td style="text-align:center">6~8</td>
 <td>文件的更改时间（mtime）， 或者是文件的最后访问时间（atime）</td>
 </tr>
 <tr>
-<td align="center">9</td>
+<td style="text-align:center">9</td>
 <td>文件名称</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="touch：创建空文件、更改文件时间"><a href="#touch：创建空文件、更改文件时间" class="headerlink" title="touch：创建空文件、更改文件时间"></a>touch：创建空文件、更改文件时间</h4><ul>
 <li>创建空文件以及更改文件的时间（atime和 mtime）。 </li>
 <li>命令语法：touch [选项] [文件]</li>
@@ -1685,37 +1737,20 @@
 <li><p>比较两个已排过序的文件，并将其结果显 示出来。 </p>
 </li>
 <li><p>命令语法：<br>comm [选项] [文件1] [文件2]</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>选项含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-1</td>
-<td>不输出文件1特有的行</td>
-</tr>
-<tr>
-<td>-2</td>
-<td>不输出文件2特有的行</td>
-</tr>
-<tr>
-<td>-3</td>
-<td>不输出两个文件共有的行</td>
-</tr>
-</tbody></table>
+<p>| 选项 | 选项含义               |<br>| —— | ——————————— |<br>| -1   | 不输出文件1特有的行    |<br>| -2   | 不输出文件2特有的行    |<br>| -3   | 不输出两个文件共有的行 |</p>
 <p>如果没有指定任何参数，comm命令读取这两个文件，然后输出三列：第 1列输出file1中特有的行；第2列输出file2中特有的行；第3列输出两个文件中共有的行。</p>
 </li>
 <li><p>【例5.18】 比较文件file1和file2文件内容。<br><code>[root@rhel ~]# cat file1</code><br>a<br>aa<br><code>[root@rhel ~]# cat file2</code><br>a<br>bb<br>//查看文件file1和file2的文件内容<br><code>[root@rhel ~]# comm file1 file2</code> </p>
-<pre><code>a</code></pre><p>aa </p>
-<pre><code>bb</code></pre><p>【例5.19】 比较文件file1和file2，只显示文件file1和file2中相同行的数据内容。 <code>[root@rhel ~]# comm -12 file1 file2</code><br>a<br>//file1和file2文件中相同行的数据内容是a</p>
+<pre><code>                             a
+</code></pre><p>aa </p>
+<pre><code>             bb
+</code></pre><p>【例5.19】 比较文件file1和file2，只显示文件file1和file2中相同行的数据内容。 <code>[root@rhel ~]# comm -12 file1 file2</code><br>a<br>//file1和file2文件中相同行的数据内容是a</p>
 </li>
 </ul>
 <h4 id="diff：逐行比较两个文本文件，列出其不同之处"><a href="#diff：逐行比较两个文本文件，列出其不同之处" class="headerlink" title="diff：逐行比较两个文本文件，列出其不同之处"></a>diff：逐行比较两个文本文件，列出其不同之处</h4><ul>
 <li>逐行比较两个文本文件，列出其不同之处。 它比comm命令能完成更复杂的检查，它对 给出的文件进行系统的检查，并显示出两 个文件中所有不同的行，不要求事先对文 件进行排序。 </li>
 <li>命令语法：diff ［选项］ [文件1] [文件2]</li>
-<li>【例5.20】 比较file1和file2文件，列出其不同之处。<br><code>[root@rhel ~]# cat file1</code><br>a<br>aa<br><code>[root@rhel ~]# cat file2</code><br>a<br>bb<br>//查看文件file1和file2的文件内容<br><code>[root@rhel ~]# diff file1 file2</code><br>2c2<br>&lt; aa<br>-–<br>&gt; bb<br>//可以看到file1和file2文件的不同处是第二行的aa和bb</li>
+<li>【例5.20】 比较file1和file2文件，列出其不同之处。<br><code>[root@rhel ~]# cat file1</code><br>a<br>aa<br><code>[root@rhel ~]# cat file2</code><br>a<br>bb<br>//查看文件file1和file2的文件内容<br><code>[root@rhel ~]# diff file1 file2</code><br>2c2<br>\&lt; aa<br>-—<br>> bb<br>//可以看到file1和file2文件的不同处是第二行的aa和bb</li>
 </ul>
 <hr>
 <p>update: 2020-7-21</p>
@@ -1743,7 +1778,7 @@
 <h4 id="uname：显示计算机及操作系统相关信息"><a href="#uname：显示计算机及操作系统相关信息" class="headerlink" title="uname：显示计算机及操作系统相关信息"></a>uname：显示计算机及操作系统相关信息</h4><ul>
 <li>显示计算机以及操作系统的相关信息，比 如计算机硬件架构、内核发行号、操作系 统名称、计算机主机名等。 </li>
 <li>命令语法：uname [选项]</li>
-<li>【例5.36】显示操作系统的内核发行号。<br><code>[root@rhel ~]# uname -r</code><br>3.10.0-327.el7.x86_64<br>【例5.37】显示计算机硬件架构名称。<br><code>[root@rhel ~]# uname -m</code><br>X86_64<br>【例5.38】显示操作系统的全部信息。<br><code>[root@rhel ~]# uname -a</code><br>Linux rhel 3.10.0-327.el7.x86_64<br>#1 SMP Thu Oct 29 17:29:29 EDT 2015 x86_64 x86_64<br>x86_64 GNU/Linux</li>
+<li>【例5.36】显示操作系统的内核发行号。<br><code>[root@rhel ~]# uname -r</code><br>3.10.0-327.el7.x86_64<br>【例5.37】显示计算机硬件架构名称。<br><code>[root@rhel ~]# uname -m</code><br>X86_64<br>【例5.38】显示操作系统的全部信息。<br><code>[root@rhel ~]# uname -a</code><br>Linux rhel 3.10.0-327.el7.x86_64 <h1 id="1-SMP-Thu-Oct-29-17-29-29-EDT-2015-x86-64-x86-64"><a href="#1-SMP-Thu-Oct-29-17-29-29-EDT-2015-x86-64-x86-64" class="headerlink" title="1 SMP Thu Oct 29 17:29:29 EDT 2015 x86_64 x86_64"></a>1 SMP Thu Oct 29 17:29:29 EDT 2015 x86_64 x86_64</h1>x86_64 GNU/Linux</li>
 </ul>
 <h4 id="hostname：显示或修改计算机主机名"><a href="#hostname：显示或修改计算机主机名" class="headerlink" title="hostname：显示或修改计算机主机名"></a>hostname：显示或修改计算机主机名</h4><ul>
 <li><p>显示或修改计算机的主机名。 </p>
@@ -1761,10 +1796,8 @@
 <li>【例5.41】查看系统的物理内存和交换分区使用情况。<br><code>[root@rhel ~]# free</code><br>【例5.42】以MB为单位查看系统的物理内存和交换分区使 用情况。<br><code>[root@rhel ~]# free -m</code><br>【例5.43】显示系统的物理内存加上交换分区总的容量。<br><code>[root@rhel ~]# free -t</code></li>
 </ul>
 <h4 id="du：显示目录或文件的磁盘占用量"><a href="#du：显示目录或文件的磁盘占用量" class="headerlink" title="du：显示目录或文件的磁盘占用量"></a>du：显示目录或文件的磁盘占用量</h4><ul>
-<li><p>显示目录或文件的磁盘占用量。逐级进入指定目录的每一个子目录并显示该目录占用文件系统数据块的情况。如果没有给出 文件或目录名称，那么就对当前目录进行 统计。</p>
-</li>
-<li><p>命令语法：du [选项] [文件|目录]</p>
-</li>
+<li>显示目录或文件的磁盘占用量。逐级进入指定目录的每一个子目录并显示该目录占用文件系统数据块的情况。如果没有给出 文件或目录名称，那么就对当前目录进行 统计。</li>
+<li>命令语法：du [选项] [文件|目录]</li>
 <li><p>【例5.44】显示文件/etc/inittab的磁盘占用量。<br><code>[root@rhel ~]# du /etc/inittab</code><br>【例5.45】显示/root目录磁盘占用量。<br><code>[root@rhel ~]# du –s /root</code><br>【例5.46】以MB为单位显示/root目录磁盘占用量。<br><code>[root@rhel ~]# du –sh /root</code></p>
 </li>
 <li><p>df -sh(显示分区信息)</p>
@@ -1820,27 +1853,30 @@
 <li>She11程序基本语法较为简单，主要由开头部分、注释部分以及语句执行部分组成。</li>
 </ul>
 <p><strong>1.开头</strong></p>
-<p>She11程序必须以下面的行开始（必须放在文件的第一行）。<br>#!/bin/bash。</p>
-<p>符号“#~”用来告诉系统它后面的参数是用来执行该文件的程序，在这个例子中使用/bin/bash来执行程序。当编辑好脚本时，如果要执行该脚本，还必须使其可执行。</p>
+<p>She11程序必须以下面的行开始（必须放在文件的第一行）。</p>
+<h1 id="bin-bash。"><a href="#bin-bash。" class="headerlink" title="!/bin/bash。"></a>!/bin/bash。</h1><p>符号“#~”用来告诉系统它后面的参数是用来执行该文件的程序，在这个例子中使用/bin/bash来执行程序。当编辑好脚本时，如果要执行该脚本，还必须使其可执行。</p>
 <p>要使脚本可执行，需赋予该文件可执行的权限，使用如下命令文件才能运行。<br>chmod u+x[文件名]</p>
 <p><strong>2.注释</strong></p>
 <p>在进行Shell编程时，以“#”开头的句子 表示注释，直到这一行的结束，建议在程 序中使用注释。如果使用注释，那么即使相当长的时间内没有使用该脚本，也能在很短的时间内明白该脚本的作用及工作原理。</p>
 <p><strong>3.执行命令</strong></p>
 <p>在She11程序中可以输入多行命令以得到命令的结果信息，这样就提高系统管理的工作效率。</p>
-<h4 id="1-创建文件"><a href="#1-创建文件" class="headerlink" title="1.创建文件"></a>1.创建文件</h4><p>在/root目录下使用vi编辑器创建文件date，该文件内容如下所示，共有3个命令。<br>#！/bin/bash<br>#filename:date<br>echo “Mr.$USER，Today is:”<br>echo `date`<br>echo Whish you a lucky day！</p>
-<h4 id="2-设置执行权限"><a href="#2-设置执行权限" class="headerlink" title="2.设置执行权限"></a>2.设置执行权限</h4><p>创建完date文件之后它还不能执行，需要给它设置可执行权限，使用如下命令给文件设置权限。<br><code>[root@rhel~]#chmod u+x /root/date</code><br><code>[root@rhel ~]#Is-1/root/date</code><br>-rwxr–r–.1 root root 886月305：37/root/date<br>/可以看到当前date文件具有可执行权限</p>
+<h4 id="1-创建文件"><a href="#1-创建文件" class="headerlink" title="1.创建文件"></a>1.创建文件</h4><p>在/root目录下使用vi编辑器创建文件date，该文件内容如下所示，共有3个命令。</p>
+<h1 id="！-bin-bash"><a href="#！-bin-bash" class="headerlink" title="！/bin/bash"></a>！/bin/bash</h1><h1 id="filename-date"><a href="#filename-date" class="headerlink" title="filename:date"></a>filename:date</h1><p>echo “Mr.$USER，Today is:”<br>echo `date`<br>echo Whish you a lucky day！</p>
+<h4 id="2-设置执行权限"><a href="#2-设置执行权限" class="headerlink" title="2.设置执行权限"></a>2.设置执行权限</h4><p>创建完date文件之后它还不能执行，需要给它设置可执行权限，使用如下命令给文件设置权限。<br><code>[root@rhel~]#chmod u+x /root/date</code><br><code>[root@rhel ~]#Is-1/root/date</code><br>-rwxr—r—.1 root root 886月305：37/root/date<br>/可以看到当前date文件具有可执行权限</p>
 <h4 id="3-执行Shell程序"><a href="#3-执行Shell程序" class="headerlink" title="3.执行Shell程序"></a>3.执行Shell程序</h4><p>输入整个文件的完整路径执行Shell程序，使用如下命令执行。<br>[root@rhel ~]#/root/date<br>Mr.root，Today is：<br>2012年06月03日星期日05：37：34 CST<br>Whish you a lucky day！<br>/可以看到Shell程序的输出信息</p>
 <h4 id="4-使用bash命令执行程序"><a href="#4-使用bash命令执行程序" class="headerlink" title="4.使用bash命令执行程序"></a>4.使用bash命令执行程序</h4><p>在执行Shell程序时需要将date文件设置为可执行权限。如果不设置文件的可执行权限，那么需要使用bash命令告诉系统它是一个可执行的脚本，使用如下命令执行Shell程序。<br>[root@rhel~]#bash /root/date<br>Mr.root，Today is：<br>2012年06月03日星期日05：37：34 CST<br>Whish you a lucky day！</p>
 <h3 id="Shell变量"><a href="#Shell变量" class="headerlink" title="Shell变量"></a>Shell变量</h3><p>像高级程序设计语言一样，Shell也提供说明和使用变量的功能。对Shell来讲，所有变量的取值都是一个字符，Shell程序采用“$var”的形式来引用名为var的变量的值。</p>
 <h4 id="Shell定义的环境变量"><a href="#Shell定义的环境变量" class="headerlink" title="Shell定义的环境变量"></a>Shell定义的环境变量</h4><p>Shell在开始执行时就已经定义了一些与系 统的工作环境有关的变量，用户还可以重新定义这些变量。</p>
-<h4 id="常用的Shell环境变量"><a href="#常用的Shell环境变量" class="headerlink" title="常用的Shell环境变量"></a>常用的Shell环境变量</h4><table>
+<h4 id="常用的Shell环境变量"><a href="#常用的Shell环境变量" class="headerlink" title="常用的Shell环境变量"></a>常用的Shell环境变量</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>Shell环境变量</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>HOME</td>
 <td>用于保存用户主目录的完全路径名</td>
 </tr>
@@ -1868,7 +1904,9 @@
 <td>TERM</td>
 <td>终端的类型</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="用户定义的变量"><a href="#用户定义的变量" class="headerlink" title="用户定义的变量"></a>用户定义的变量</h4><ul>
 <li>用户可以按照下面的语法规则定义自己的变量。 变量名=变量值</li>
 <li>在定义变量时，变量名前不应该加符号“$”，在 引用变量的内容时则应在变量名前加符号“$”。</li>
@@ -1882,6 +1920,7 @@
 <h4 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h4><p>位置参数是一种在调用Shell程序的命令行 中按照各自的位置决定的变量，是在程序 名之后输入的参数。位置参数之间用空格 分隔，Shell取第一个位置参数替换程序文 件中的$1，第二个替换​$2，依次类推。$0 是一个特殊的变量，它的内容是当前这个 Shell程序的文件名，所以$0不是一个位置 参数，在显示当前所有的位置参数时是不包括$0的。</p>
 <h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><p>预定义变量和环境变量相类似，也是在 Shell一开始时就定义了的变量。所不同的 是，用户只能根据Shell的定义来使用这些 变量，所有预定义变量都是由符号“$”和另一个符号组成的。</p>
 <p><strong>常用的Shell预定义变量</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1889,7 +1928,8 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>$#</td>
 <td>位置参数的数量</td>
 </tr>
@@ -1913,7 +1953,9 @@
 <td>$0</td>
 <td>当前执行的进程名</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h4 id="参数置换的变量"><a href="#参数置换的变量" class="headerlink" title="参数置换的变量"></a>参数置换的变量</h4><p>Shell提供了参数置换功能以便用户可以根 据不同的条件来给变量赋不同的值。参数 置换的变量有四种，这些变量通常与某一 个位置参数相联系，根据指定的位置参数是否已经设置决定变量的取值。</p>
 <p>1．变量=${参数-word}<br>如果设置了参数，则用参数的值置换变量的值，否则用word置换， 即这种变量的值等于某一个参数的值。如果该参数没有设置，则变量就等于word值。<br>2．变量=${参数=word}<br>如果设置了参数，则用参数的值置换变量的值，否则把变量设置成 word，然后再用word替换参数的值。位置参数不能用于这种方式， 因为在shell程序中不能为位置参数赋值。<br>3．变量${参数?word}<br>如果设置了参数，则用参数的值置换变量的值，否则就显示word并 从shell中退出，如果省略了word，则显示标准信息。这种变量要求 一定等于某一个参数的值。如果该参数没有设置，就显示一个信息， 然后退出，这种方式常用于出错指示。<br>4．变量=${参数+word}<br>如果设置了参数，则用word置换变量，否则不进行置换。</p>
 <h3 id="变量表达式"><a href="#变量表达式" class="headerlink" title="变量表达式"></a>变量表达式</h3><h3 id="Shell条件判断语句"><a href="#Shell条件判断语句" class="headerlink" title="Shell条件判断语句"></a>Shell条件判断语句</h3><h3 id="Shell循环控制语句"><a href="#Shell循环控制语句" class="headerlink" title="Shell循环控制语句"></a>Shell循环控制语句</h3><hr>
@@ -1926,14 +1968,16 @@
 <h4 id="3．普通用户"><a href="#3．普通用户" class="headerlink" title="3．普通用户"></a>3．普通用户</h4><p>这类用户能登录系统，在Linux系统上进行 普通操作，能操作自己目录的内容，其使 用系统的权限受限，这类用户都是系统管理员创建的。普通用户的UID为1000~60000。</p>
 <h4 id="etc-passwd文件"><a href="#etc-passwd文件" class="headerlink" title="/etc/passwd文件"></a>/etc/passwd文件</h4><p>/etc/passwd文件是系统识别用户的一个重要文件， Linux系统中所有的用户都记录在该文件中。假设 用户以账户zhangsan登录系统时，系统首先会检 查/etc/passwd文件，看是否有zhangsan这个账户， 然后确定用户zhangsan的UID，通过UID来确认用 户的身份，如果存在则读取/etc/shadow文件中所 对应的密码。如果密码核实无误则登录系统，读取用户的配置文件。</p>
 <p>任何用户都可以读取/etc/passwd文件内容，在 /etc/passwd文件中，每一行表示的是一个用户账 户的信息，一行有7个段位，每个段位用“:”分隔。<br><code>zhangsan:x:1000:1000:张三:/home/zhangsan:/bin/bash</code></p>
-<h4 id="etc-passwd文件字段含义"><a href="#etc-passwd文件字段含义" class="headerlink" title="/etc/passwd文件字段含义"></a>/etc/passwd文件字段含义</h4><table>
+<h4 id="etc-passwd文件字段含义"><a href="#etc-passwd文件字段含义" class="headerlink" title="/etc/passwd文件字段含义"></a>/etc/passwd文件字段含义</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>字段</th>
 <th>字段含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>用户名</td>
 <td>也称为登录名，在系统内用户名应该具有惟一性。在本例中， zhangsan就是用户名</td>
 </tr>
@@ -1961,7 +2005,9 @@
 <td>登录Shell</td>
 <td>用户使用的Shell类型，Linux系统默认使用的Shell是/bin/bash</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>用户UID</strong></p>
 <p>UID是用户的ID值，在系统中每一位用户的UID值 都是惟一的，更确切地说每一位用户都要对应一 个惟一的UID。Linux系统用户的UID值是一个正整数，初始值从0开始，在Linux系统中默认的最大值是60000。</p>
 <p>在Linux系统中，root的UID是0，拥有系统最高 权限。UID的唯一性关系到系统的安全，比如在 /etc/passwd文件中把用户zhangsan的UID改为0 后，zhangsan这个用户会被确认为root用户，当 用这个账户登录到系统后，可以进行所有root用户才能执行的操作。</p>
@@ -1969,14 +2015,16 @@
 <h4 id="etc-shadow文件"><a href="#etc-shadow文件" class="headerlink" title="/etc/shadow文件"></a>/etc/shadow文件</h4><p>/etc/shadow文件是/etc/passwd的影子文件，这 个文件并不是由/etc/passwd文件产生，这两个文件应该是对应互补的。/etc/shadow文件内容包括用户及被加密的密码以及其它/etc/passwd不能包括的信息，比如用户账户的有效期限等。</p>
 <p>/etc/shadow文件只有root用可以读取和操作，文 件的权限不能随便更改为其它用户可读，这样做 是非常危险的。如果发现这个文件的权限变成了 其它组群或用户可读了，要进行检查，以防系统安全问题的发生。</p>
 <p>/etc/shadow文件的内容包括9个段位，每个段位 之间用“:”分隔。<br><code>zhangsan:$6$E/xvWMmh$rhYLQwwffEqIudVLFzMlvkb0iN4.0Oluk6H.UovEYN0/99dVoHXcaCNGZZkFY1S3QHYgm7e6JPzEew6ybmN4e0:16364:0:99999:7:::</code></p>
-<h4 id="etc-shadow文件字段含义"><a href="#etc-shadow文件字段含义" class="headerlink" title="/etc/shadow文件字段含义"></a>/etc/shadow文件字段含义</h4><table>
+<h4 id="etc-shadow文件字段含义"><a href="#etc-shadow文件字段含义" class="headerlink" title="/etc/shadow文件字段含义"></a>/etc/shadow文件字段含义</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>字段</th>
 <th>字段含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>用户名</td>
 <td>这里的用户名和/etc/passwd中的用户名是相同的</td>
 </tr>
@@ -2012,7 +2060,9 @@
 <td>保留字段</td>
 <td>目前为空，以备将来Linux系统发展时使用</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>/etc/login.defs 产生用户初始配置信息</strong></p>
 <p><strong>/etc/skel 新创建用户主目录包含的文件</strong></p>
 <h3 id="用户账户设置"><a href="#用户账户设置" class="headerlink" title="用户账户设置"></a>用户账户设置</h3><p>在Linux系统字符界面中创建、修改以及删 除用户账户主要使用useradd，usermod和userdel这3个命令。</p>
@@ -2039,14 +2089,16 @@
 <h4 id="etc-group文件"><a href="#etc-group文件" class="headerlink" title="/etc/group文件"></a>/etc/group文件</h4><p>/etc/group文件是组群的配置文件，内容包括用户和组群， 并且能显示出用户是归属哪个组群或哪几个组群。一个用户可以归属一个或多个不同的组群，同一组群的用户之间具有相似的特征。比如把某一用户加入到root组群，那么这个用户就可以浏览root用户主目录的文件，如果root用户把某个文件的读写执行权限开放，root组群的所有用户都可以修改此文件；如果是可执行的文件，root组群的用户也是可以执行的。</p>
 <p>组群的特性在系统管理中为系统管理员提供了极大的方便， 但安全性也是值得关注的，如某个用户有对系统管理有最 重要的内容，最好让用户拥有独立的组群，或者把用户的 文件的权限设置为完全私有。</p>
 <p>/etc/group文件的内容包括组群名、组群密码、GID及该 组群所包含的用户，每个组群一条记录，一行有4个段位， 每个段位用“:”分隔。<br><code>zhangsan:x:1000:</code></p>
-<h4 id="etc-group文件字段含义"><a href="#etc-group文件字段含义" class="headerlink" title="/etc/group文件字段含义"></a>/etc/group文件字段含义</h4><table>
+<h4 id="etc-group文件字段含义"><a href="#etc-group文件字段含义" class="headerlink" title="/etc/group文件字段含义"></a>/etc/group文件字段含义</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>字段</th>
 <th>字段含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>组群名</td>
 <td>组群名称，如组群名root</td>
 </tr>
@@ -2062,19 +2114,23 @@
 <td>组群成员</td>
 <td>属于这个组群的成员，如root组群的成员有root用户</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>组群GID</strong></p>
 <p>组群GID和UID类似，是一个从0开始的正整数，GID为0的组群是root组群。Linux系统会预留GID号1~999给系统虚拟组群使用， 创建的新组群GID是从1000开始的，查看系统创建组群默认的GID范围应该查看 /etc/login.defs中的GID_MIN和GID_MAX值，可以使用以下命令查看。</p>
 <h4 id="etc-gshadow文件"><a href="#etc-gshadow文件" class="headerlink" title="/etc/gshadow文件"></a>/etc/gshadow文件</h4><p>/etc/gshadow是/etc/group的加密文件，组群密码就是存放在这个文件中。/etc/gshadow和 /etc/group是互补的两个文件；对于大型服务器，针对很多用户和组群，定制一些关系结构比较复杂的权限模型，设置组群密码是很有必要的。比如不想让一些非组群成员永久拥有组群的权限和特性，可以通过密码验证的方式来让某些用户临时拥有一些组群特性，这时就要用到组群密码。</p>
 <p>/etc/gshadow文件中每个组群都有一条记录。一 行有4个段位，每个段位用“:”分隔。<br><code>beijing:$6$E/xvWMmh$rhYLQwwffEqIudVLFzMlv1::ou</code></p>
-<h4 id="etc-gshadow文件字段含义"><a href="#etc-gshadow文件字段含义" class="headerlink" title="/etc/gshadow文件字段含义"></a>/etc/gshadow文件字段含义</h4><table>
+<h4 id="etc-gshadow文件字段含义"><a href="#etc-gshadow文件字段含义" class="headerlink" title="/etc/gshadow文件字段含义"></a>/etc/gshadow文件字段含义</h4><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>字段</th>
 <th>字段含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>组群名</td>
 <td>组群的名称</td>
 </tr>
@@ -2090,7 +2146,9 @@
 <td>组群成员</td>
 <td>属于该组群的用户成员列表，如有多个用户用逗 号分隔。本例中beijing组群的成员是ou</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h3 id="组群账户设置"><a href="#组群账户设置" class="headerlink" title="组群账户设置"></a>组群账户设置</h3><p>在Linux系统字符界面下创建、修改以及删 除组群账户主要使用groupadd，groupmod和groupdel这3个命令。</p>
 <h4 id="创建组群账户"><a href="#创建组群账户" class="headerlink" title="创建组群账户"></a>创建组群账户</h4><p>使用groupadd命令可以在Linux系统中创建组群账户。 </p>
 <p>命令语法：groupadd [选项] [组群名]</p>
@@ -2322,7 +2380,7 @@
             
     
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Linux系统的组成"><span class="nav-number">1.</span> <span class="nav-text">一、Linux系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-内核"><span class="nav-number">1.1.</span> <span class="nav-text">1.内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Shell"><span class="nav-number">1.2.</span> <span class="nav-text">2.Shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件系统"><span class="nav-number">1.3.</span> <span class="nav-text">3.文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-应用程序"><span class="nav-number">1.4.</span> <span class="nav-text">4.应用程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Linux系统"><span class="nav-number">2.</span> <span class="nav-text">二、安装Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备安装Linux系统"><span class="nav-number">2.1.</span> <span class="nav-text">1.准备安装Linux系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装Linux系统"><span class="nav-number">2.2.</span> <span class="nav-text">2.安装Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬盘分区规划（1）"><span class="nav-number">2.2.1.</span> <span class="nav-text">硬盘分区规划（1）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬盘分区规划（2）"><span class="nav-number">2.2.2.</span> <span class="nav-text">硬盘分区规划（2）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换分区"><span class="nav-number">2.2.3.</span> <span class="nav-text">交换分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区命名方案"><span class="nav-number">2.2.4.</span> <span class="nav-text">分区命名方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注销、关闭和重启Linux系统"><span class="nav-number">2.3.</span> <span class="nav-text">3.注销、关闭和重启Linux系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-FirewallD防火墙"><span class="nav-number">2.4.</span> <span class="nav-text">4.FirewallD防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、字符界面操作基础"><span class="nav-number">3.</span> <span class="nav-text">三、字符界面操作基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-字符界面简介"><span class="nav-number">3.1.</span> <span class="nav-text">1.字符界面简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进入Linux字符界面方式"><span class="nav-number">3.1.1.</span> <span class="nav-text">进入Linux字符界面方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Linux字符界面"><span class="nav-number">3.1.2.</span> <span class="nav-text">1、Linux字符界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、字符界面登录提示"><span class="nav-number">3.1.3.</span> <span class="nav-text">2、字符界面登录提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、图形界面下的终端"><span class="nav-number">3.1.4.</span> <span class="nav-text">3、图形界面下的终端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、虚拟控制台"><span class="nav-number">3.1.5.</span> <span class="nav-text">4、虚拟控制台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、关闭和重启Linux系统"><span class="nav-number">3.1.6.</span> <span class="nav-text">5、关闭和重启Linux系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、目标"><span class="nav-number">3.1.7.</span> <span class="nav-text">6、目标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在Linux系统下获取帮助"><span class="nav-number">3.2.</span> <span class="nav-text">2.在Linux系统下获取帮助</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用man手册页"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用man手册页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man命令"><span class="nav-number">3.2.2.</span> <span class="nav-text">man命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man手册页类型"><span class="nav-number">3.2.3.</span> <span class="nav-text">man手册页类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用–help选项获取帮助"><span class="nav-number">3.2.4.</span> <span class="nav-text">使用–help选项获取帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Shell基础"><span class="nav-number">3.3.</span> <span class="nav-text">3.Shell基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-使用bash"><span class="nav-number">3.4.</span> <span class="nav-text">4.使用bash</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、常用控制组合键"><span class="nav-number">3.4.1.</span> <span class="nav-text">1、常用控制组合键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、光标操作"><span class="nav-number">3.4.2.</span> <span class="nav-text">2、光标操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、特殊字符"><span class="nav-number">3.4.3.</span> <span class="nav-text">3、特殊字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、通配符"><span class="nav-number">3.4.4.</span> <span class="nav-text">4、通配符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Shell实用功能"><span class="nav-number">3.5.</span> <span class="nav-text">5.Shell实用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、命令行自动补全"><span class="nav-number">3.5.1.</span> <span class="nav-text">1、命令行自动补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、命令历史记录"><span class="nav-number">3.5.2.</span> <span class="nav-text">2、命令历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、使用命令历史"><span class="nav-number">3.5.3.</span> <span class="nav-text">3、使用命令历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、搜索历史命令"><span class="nav-number">3.5.4.</span> <span class="nav-text">4、搜索历史命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、命令排列"><span class="nav-number">3.5.5.</span> <span class="nav-text">5、命令排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、命令替换"><span class="nav-number">3.5.6.</span> <span class="nav-text">6、命令替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、命令别名"><span class="nav-number">3.5.7.</span> <span class="nav-text">7、命令别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、管道"><span class="nav-number">3.5.8.</span> <span class="nav-text">8、管道</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重定向"><span class="nav-number">3.6.</span> <span class="nav-text">6.重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.6.1.</span> <span class="nav-text">输出重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.6.2.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误重定向"><span class="nav-number">3.6.3.</span> <span class="nav-text">错误重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同时实现输出和错误重定向"><span class="nav-number">3.6.4.</span> <span class="nav-text">同时实现输出和错误重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-vi编辑器"><span class="nav-number">3.7.</span> <span class="nav-text">7.vi编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vi编辑器简介"><span class="nav-number">3.7.1.</span> <span class="nav-text">vi编辑器简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、命令模式"><span class="nav-number">3.7.2.</span> <span class="nav-text">1、命令模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、插入模式"><span class="nav-number">3.7.3.</span> <span class="nav-text">2、插入模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、末行模式"><span class="nav-number">3.7.4.</span> <span class="nav-text">3、末行模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入插入模式"><span class="nav-number">3.7.5.</span> <span class="nav-text">进入插入模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标移动"><span class="nav-number">3.7.6.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令模式命令"><span class="nav-number">3.7.7.</span> <span class="nav-text">命令模式命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、目录和文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、目录和文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Linux文件类型"><span class="nav-number">4.1.</span> <span class="nav-text">1.Linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-普通文件"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.普通文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-目录文件"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.目录文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设备文件"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-管道文件"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.管道文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-链接文件"><span class="nav-number">4.1.5.</span> <span class="nav-text">5.链接文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Linux目录结构"><span class="nav-number">4.2.</span> <span class="nav-text">2.Linux目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux目录结构"><span class="nav-number">4.2.1.</span> <span class="nav-text">Linux目录结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件和目录操作"><span class="nav-number">4.3.</span> <span class="nav-text">3.文件和目录操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd：显示工作目录路径"><span class="nav-number">4.3.1.</span> <span class="nav-text">pwd：显示工作目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd：更改工作目录路径"><span class="nav-number">4.3.2.</span> <span class="nav-text">cd：更改工作目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls：列出目录和文件信息"><span class="nav-number">4.3.3.</span> <span class="nav-text">ls：列出目录和文件信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#touch：创建空文件、更改文件时间"><span class="nav-number">4.3.4.</span> <span class="nav-text">touch：创建空文件、更改文件时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir：创建目录"><span class="nav-number">4.3.5.</span> <span class="nav-text">mkdir：创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rmdir：删除空目录"><span class="nav-number">4.3.6.</span> <span class="nav-text">rmdir：删除空目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp：复制文件和目录"><span class="nav-number">4.3.7.</span> <span class="nav-text">cp：复制文件和目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv：文件和目录改名、移动文件和目录路径"><span class="nav-number">4.3.8.</span> <span class="nav-text">mv：文件和目录改名、移动文件和目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm：删除文件或目录"><span class="nav-number">4.3.9.</span> <span class="nav-text">rm：删除文件或目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc：统计文件行数、单词数和字节数和字符数"><span class="nav-number">4.3.10.</span> <span class="nav-text">wc：统计文件行数、单词数和字节数和字符数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-链接文件"><span class="nav-number">4.4.</span> <span class="nav-text">4.链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链接文件简介"><span class="nav-number">4.4.1.</span> <span class="nav-text">链接文件简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建和使用链接文件"><span class="nav-number">4.4.2.</span> <span class="nav-text">创建和使用链接文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、Linux常用命令"><span class="nav-number">5.</span> <span class="nav-text">五、Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文本内容显示"><span class="nav-number">5.1.</span> <span class="nav-text">1.文本内容显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat：显示文本文件"><span class="nav-number">5.1.1.</span> <span class="nav-text">cat：显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more：分页显示文本文件"><span class="nav-number">5.1.2.</span> <span class="nav-text">more：分页显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#less：回卷显示文本文件"><span class="nav-number">5.1.3.</span> <span class="nav-text">less：回卷显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head：显示指定文件前若干行"><span class="nav-number">5.1.4.</span> <span class="nav-text">head：显示指定文件前若干行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail：查看文件末尾数据"><span class="nav-number">5.1.5.</span> <span class="nav-text">tail：查看文件末尾数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文本内容处理"><span class="nav-number">5.2.</span> <span class="nav-text">2.文本内容处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort：对文件中的数据进行排序"><span class="nav-number">5.2.1.</span> <span class="nav-text">sort：对文件中的数据进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uniq：将重复行从输出文件中删除"><span class="nav-number">5.2.2.</span> <span class="nav-text">uniq：将重复行从输出文件中删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut：从文件每行中显示出选定的字节、字符或字段"><span class="nav-number">5.2.3.</span> <span class="nav-text">cut：从文件每行中显示出选定的字节、字符或字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#comm：逐行比较两个已排过序的文件"><span class="nav-number">5.2.4.</span> <span class="nav-text">comm：逐行比较两个已排过序的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff：逐行比较两个文本文件，列出其不同之处"><span class="nav-number">5.2.5.</span> <span class="nav-text">diff：逐行比较两个文本文件，列出其不同之处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件和命令查找"><span class="nav-number">5.3.</span> <span class="nav-text">3.文件和命令查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#grep：查找文件中符合条件的字符串"><span class="nav-number">5.3.1.</span> <span class="nav-text">grep：查找文件中符合条件的字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find：列出文件系统内符合条件的文件"><span class="nav-number">5.3.2.</span> <span class="nav-text">find：列出文件系统内符合条件的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate：在数据库中查找文件"><span class="nav-number">5.3.3.</span> <span class="nav-text">locate：在数据库中查找文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-系统信息显示"><span class="nav-number">5.4.</span> <span class="nav-text">4.系统信息显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#uname：显示计算机及操作系统相关信息"><span class="nav-number">5.4.1.</span> <span class="nav-text">uname：显示计算机及操作系统相关信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hostname：显示或修改计算机主机名"><span class="nav-number">5.4.2.</span> <span class="nav-text">hostname：显示或修改计算机主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free：查看内存信息"><span class="nav-number">5.4.3.</span> <span class="nav-text">free：查看内存信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du：显示目录或文件的磁盘占用量"><span class="nav-number">5.4.4.</span> <span class="nav-text">du：显示目录或文件的磁盘占用量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-日期和时间"><span class="nav-number">5.5.</span> <span class="nav-text">5.日期和时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cal：显示日历信息"><span class="nav-number">5.5.1.</span> <span class="nav-text">cal：显示日历信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date：显示和设置系统日期和时间"><span class="nav-number">5.5.2.</span> <span class="nav-text">date：显示和设置系统日期和时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hwclock：查看和设置硬件时钟"><span class="nav-number">5.5.3.</span> <span class="nav-text">hwclock：查看和设置硬件时钟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-信息交流"><span class="nav-number">5.6.</span> <span class="nav-text">6.信息交流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo：在显示器上显示文字"><span class="nav-number">5.6.1.</span> <span class="nav-text">echo：在显示器上显示文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mesg：允许或拒绝写消息"><span class="nav-number">5.6.2.</span> <span class="nav-text">mesg：允许或拒绝写消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wall：对全部已登录用户发送信息"><span class="nav-number">5.6.3.</span> <span class="nav-text">wall：对全部已登录用户发送信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write：向用户发送消息"><span class="nav-number">5.6.4.</span> <span class="nav-text">write：向用户发送消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-其他命令"><span class="nav-number">5.7.</span> <span class="nav-text">7.其他命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、Shell编程"><span class="nav-number">6.</span> <span class="nav-text">六、Shell编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟悉Shell程序的创建"><span class="nav-number">6.1.</span> <span class="nav-text">熟悉Shell程序的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法基本介绍"><span class="nav-number">6.1.1.</span> <span class="nav-text">语法基本介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建文件"><span class="nav-number">6.1.2.</span> <span class="nav-text">1.创建文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设置执行权限"><span class="nav-number">6.1.3.</span> <span class="nav-text">2.设置执行权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-执行Shell程序"><span class="nav-number">6.1.4.</span> <span class="nav-text">3.执行Shell程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-使用bash命令执行程序"><span class="nav-number">6.1.5.</span> <span class="nav-text">4.使用bash命令执行程序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell变量"><span class="nav-number">6.2.</span> <span class="nav-text">Shell变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shell定义的环境变量"><span class="nav-number">6.2.1.</span> <span class="nav-text">Shell定义的环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的Shell环境变量"><span class="nav-number">6.2.2.</span> <span class="nav-text">常用的Shell环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户定义的变量"><span class="nav-number">6.2.3.</span> <span class="nav-text">用户定义的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置参数"><span class="nav-number">6.2.4.</span> <span class="nav-text">位置参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预定义变量"><span class="nav-number">6.2.5.</span> <span class="nav-text">预定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数置换的变量"><span class="nav-number">6.2.6.</span> <span class="nav-text">参数置换的变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量表达式"><span class="nav-number">6.3.</span> <span class="nav-text">变量表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell条件判断语句"><span class="nav-number">6.4.</span> <span class="nav-text">Shell条件判断语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell循环控制语句"><span class="nav-number">6.5.</span> <span class="nav-text">Shell循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、用户和组群账户管理"><span class="nav-number">7.</span> <span class="nav-text">七、用户和组群账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户账户简介"><span class="nav-number">7.1.</span> <span class="nav-text">用户账户简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户账户分类"><span class="nav-number">7.1.1.</span> <span class="nav-text">用户账户分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1．root用户"><span class="nav-number">7.1.2.</span> <span class="nav-text">1．root用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．系统用户"><span class="nav-number">7.1.3.</span> <span class="nav-text">2．系统用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3．普通用户"><span class="nav-number">7.1.4.</span> <span class="nav-text">3．普通用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-passwd文件"><span class="nav-number">7.1.5.</span> <span class="nav-text">&#x2F;etc&#x2F;passwd文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-passwd文件字段含义"><span class="nav-number">7.1.6.</span> <span class="nav-text">&#x2F;etc&#x2F;passwd文件字段含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-shadow文件"><span class="nav-number">7.1.7.</span> <span class="nav-text">&#x2F;etc&#x2F;shadow文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-shadow文件字段含义"><span class="nav-number">7.1.8.</span> <span class="nav-text">&#x2F;etc&#x2F;shadow文件字段含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户账户设置"><span class="nav-number">7.2.</span> <span class="nav-text">用户账户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户账户"><span class="nav-number">7.2.1.</span> <span class="nav-text">创建用户账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改用户账户"><span class="nav-number">7.2.2.</span> <span class="nav-text">修改用户账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除用户账户"><span class="nav-number">7.2.3.</span> <span class="nav-text">删除用户账户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组群账户简介"><span class="nav-number">7.3.</span> <span class="nav-text">组群账户简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组群账户分类"><span class="nav-number">7.3.1.</span> <span class="nav-text">组群账户分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-group文件"><span class="nav-number">7.3.2.</span> <span class="nav-text">&#x2F;etc&#x2F;group文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-group文件字段含义"><span class="nav-number">7.3.3.</span> <span class="nav-text">&#x2F;etc&#x2F;group文件字段含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-gshadow文件"><span class="nav-number">7.3.4.</span> <span class="nav-text">&#x2F;etc&#x2F;gshadow文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-gshadow文件字段含义"><span class="nav-number">7.3.5.</span> <span class="nav-text">&#x2F;etc&#x2F;gshadow文件字段含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组群账户设置"><span class="nav-number">7.4.</span> <span class="nav-text">组群账户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建组群账户"><span class="nav-number">7.4.1.</span> <span class="nav-text">创建组群账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改组群账户"><span class="nav-number">7.4.2.</span> <span class="nav-text">修改组群账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除组群账户"><span class="nav-number">7.4.3.</span> <span class="nav-text">删除组群账户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户和组群账户维护"><span class="nav-number">7.5.</span> <span class="nav-text">用户和组群账户维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd命令"><span class="nav-number">7.5.1.</span> <span class="nav-text">passwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gpasswd命令"><span class="nav-number">7.5.2.</span> <span class="nav-text">gpasswd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#su命令"><span class="nav-number">7.5.3.</span> <span class="nav-text">su命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#newgrp命令"><span class="nav-number">7.5.4.</span> <span class="nav-text">newgrp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groups-命令"><span class="nav-number">7.5.5.</span> <span class="nav-text">groups 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id命令"><span class="nav-number">7.5.6.</span> <span class="nav-text">id命令</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Linux系统的组成"><span class="nav-number">1.</span> <span class="nav-text">一、Linux系统的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-内核"><span class="nav-number">1.1.</span> <span class="nav-text">1.内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Shell"><span class="nav-number">1.2.</span> <span class="nav-text">2.Shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件系统"><span class="nav-number">1.3.</span> <span class="nav-text">3.文件系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-应用程序"><span class="nav-number">1.4.</span> <span class="nav-text">4.应用程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装Linux系统"><span class="nav-number">2.</span> <span class="nav-text">二、安装Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-准备安装Linux系统"><span class="nav-number">2.1.</span> <span class="nav-text">1.准备安装Linux系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-安装Linux系统"><span class="nav-number">2.2.</span> <span class="nav-text">2.安装Linux系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#硬盘分区规划（1）"><span class="nav-number">2.2.1.</span> <span class="nav-text">硬盘分区规划（1）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬盘分区规划（2）"><span class="nav-number">2.2.2.</span> <span class="nav-text">硬盘分区规划（2）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换分区"><span class="nav-number">2.2.3.</span> <span class="nav-text">交换分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区命名方案"><span class="nav-number">2.2.4.</span> <span class="nav-text">分区命名方案</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注销、关闭和重启Linux系统"><span class="nav-number">2.3.</span> <span class="nav-text">3.注销、关闭和重启Linux系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-FirewallD防火墙"><span class="nav-number">2.4.</span> <span class="nav-text">4.FirewallD防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、字符界面操作基础"><span class="nav-number">3.</span> <span class="nav-text">三、字符界面操作基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-字符界面简介"><span class="nav-number">3.1.</span> <span class="nav-text">1.字符界面简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进入Linux字符界面方式"><span class="nav-number">3.1.1.</span> <span class="nav-text">进入Linux字符界面方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、Linux字符界面"><span class="nav-number">3.1.2.</span> <span class="nav-text">1、Linux字符界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、字符界面登录提示"><span class="nav-number">3.1.3.</span> <span class="nav-text">2、字符界面登录提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、图形界面下的终端"><span class="nav-number">3.1.4.</span> <span class="nav-text">3、图形界面下的终端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、虚拟控制台"><span class="nav-number">3.1.5.</span> <span class="nav-text">4、虚拟控制台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、关闭和重启Linux系统"><span class="nav-number">3.1.6.</span> <span class="nav-text">5、关闭和重启Linux系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、目标"><span class="nav-number">3.1.7.</span> <span class="nav-text">6、目标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在Linux系统下获取帮助"><span class="nav-number">3.2.</span> <span class="nav-text">2.在Linux系统下获取帮助</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用man手册页"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用man手册页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man命令"><span class="nav-number">3.2.2.</span> <span class="nav-text">man命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#man手册页类型"><span class="nav-number">3.2.3.</span> <span class="nav-text">man手册页类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用—help选项获取帮助"><span class="nav-number">3.2.4.</span> <span class="nav-text">使用—help选项获取帮助</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Shell基础"><span class="nav-number">3.3.</span> <span class="nav-text">3.Shell基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-使用bash"><span class="nav-number">3.4.</span> <span class="nav-text">4.使用bash</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、常用控制组合键"><span class="nav-number">3.4.1.</span> <span class="nav-text">1、常用控制组合键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、光标操作"><span class="nav-number">3.4.2.</span> <span class="nav-text">2、光标操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、特殊字符"><span class="nav-number">3.4.3.</span> <span class="nav-text">3、特殊字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、通配符"><span class="nav-number">3.4.4.</span> <span class="nav-text">4、通配符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Shell实用功能"><span class="nav-number">3.5.</span> <span class="nav-text">5.Shell实用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、命令行自动补全"><span class="nav-number">3.5.1.</span> <span class="nav-text">1、命令行自动补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、命令历史记录"><span class="nav-number">3.5.2.</span> <span class="nav-text">2、命令历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、使用命令历史"><span class="nav-number">3.5.3.</span> <span class="nav-text">3、使用命令历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、搜索历史命令"><span class="nav-number">3.5.4.</span> <span class="nav-text">4、搜索历史命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、命令排列"><span class="nav-number">3.5.5.</span> <span class="nav-text">5、命令排列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、命令替换"><span class="nav-number">3.5.6.</span> <span class="nav-text">6、命令替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、命令别名"><span class="nav-number">3.5.7.</span> <span class="nav-text">7、命令别名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、管道"><span class="nav-number">3.5.8.</span> <span class="nav-text">8、管道</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-重定向"><span class="nav-number">3.6.</span> <span class="nav-text">6.重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输出重定向"><span class="nav-number">3.6.1.</span> <span class="nav-text">输出重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输入重定向"><span class="nav-number">3.6.2.</span> <span class="nav-text">输入重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#错误重定向"><span class="nav-number">3.6.3.</span> <span class="nav-text">错误重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同时实现输出和错误重定向"><span class="nav-number">3.6.4.</span> <span class="nav-text">同时实现输出和错误重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-vi编辑器"><span class="nav-number">3.7.</span> <span class="nav-text">7.vi编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vi编辑器简介"><span class="nav-number">3.7.1.</span> <span class="nav-text">vi编辑器简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1、命令模式"><span class="nav-number">3.7.2.</span> <span class="nav-text">1、命令模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、插入模式"><span class="nav-number">3.7.3.</span> <span class="nav-text">2、插入模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、末行模式"><span class="nav-number">3.7.4.</span> <span class="nav-text">3、末行模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入插入模式"><span class="nav-number">3.7.5.</span> <span class="nav-text">进入插入模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光标移动"><span class="nav-number">3.7.6.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令模式命令"><span class="nav-number">3.7.7.</span> <span class="nav-text">命令模式命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、目录和文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、目录和文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Linux文件类型"><span class="nav-number">4.1.</span> <span class="nav-text">1.Linux文件类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-普通文件"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.普通文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-目录文件"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.目录文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设备文件"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.设备文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-管道文件"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.管道文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-链接文件"><span class="nav-number">4.1.5.</span> <span class="nav-text">5.链接文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Linux目录结构"><span class="nav-number">4.2.</span> <span class="nav-text">2.Linux目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux目录结构"><span class="nav-number">4.2.1.</span> <span class="nav-text">Linux目录结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件和目录操作"><span class="nav-number">4.3.</span> <span class="nav-text">3.文件和目录操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pwd：显示工作目录路径"><span class="nav-number">4.3.1.</span> <span class="nav-text">pwd：显示工作目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cd：更改工作目录路径"><span class="nav-number">4.3.2.</span> <span class="nav-text">cd：更改工作目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ls：列出目录和文件信息"><span class="nav-number">4.3.3.</span> <span class="nav-text">ls：列出目录和文件信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#touch：创建空文件、更改文件时间"><span class="nav-number">4.3.4.</span> <span class="nav-text">touch：创建空文件、更改文件时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir：创建目录"><span class="nav-number">4.3.5.</span> <span class="nav-text">mkdir：创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rmdir：删除空目录"><span class="nav-number">4.3.6.</span> <span class="nav-text">rmdir：删除空目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cp：复制文件和目录"><span class="nav-number">4.3.7.</span> <span class="nav-text">cp：复制文件和目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mv：文件和目录改名、移动文件和目录路径"><span class="nav-number">4.3.8.</span> <span class="nav-text">mv：文件和目录改名、移动文件和目录路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rm：删除文件或目录"><span class="nav-number">4.3.9.</span> <span class="nav-text">rm：删除文件或目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc：统计文件行数、单词数和字节数和字符数"><span class="nav-number">4.3.10.</span> <span class="nav-text">wc：统计文件行数、单词数和字节数和字符数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-链接文件"><span class="nav-number">4.4.</span> <span class="nav-text">4.链接文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链接文件简介"><span class="nav-number">4.4.1.</span> <span class="nav-text">链接文件简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建和使用链接文件"><span class="nav-number">4.4.2.</span> <span class="nav-text">创建和使用链接文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、Linux常用命令"><span class="nav-number">5.</span> <span class="nav-text">五、Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-文本内容显示"><span class="nav-number">5.1.</span> <span class="nav-text">1.文本内容显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cat：显示文本文件"><span class="nav-number">5.1.1.</span> <span class="nav-text">cat：显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#more：分页显示文本文件"><span class="nav-number">5.1.2.</span> <span class="nav-text">more：分页显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#less：回卷显示文本文件"><span class="nav-number">5.1.3.</span> <span class="nav-text">less：回卷显示文本文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#head：显示指定文件前若干行"><span class="nav-number">5.1.4.</span> <span class="nav-text">head：显示指定文件前若干行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tail：查看文件末尾数据"><span class="nav-number">5.1.5.</span> <span class="nav-text">tail：查看文件末尾数据</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文本内容处理"><span class="nav-number">5.2.</span> <span class="nav-text">2.文本内容处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort：对文件中的数据进行排序"><span class="nav-number">5.2.1.</span> <span class="nav-text">sort：对文件中的数据进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uniq：将重复行从输出文件中删除"><span class="nav-number">5.2.2.</span> <span class="nav-text">uniq：将重复行从输出文件中删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut：从文件每行中显示出选定的字节、字符或字段"><span class="nav-number">5.2.3.</span> <span class="nav-text">cut：从文件每行中显示出选定的字节、字符或字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#comm：逐行比较两个已排过序的文件"><span class="nav-number">5.2.4.</span> <span class="nav-text">comm：逐行比较两个已排过序的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#diff：逐行比较两个文本文件，列出其不同之处"><span class="nav-number">5.2.5.</span> <span class="nav-text">diff：逐行比较两个文本文件，列出其不同之处</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-文件和命令查找"><span class="nav-number">5.3.</span> <span class="nav-text">3.文件和命令查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#grep：查找文件中符合条件的字符串"><span class="nav-number">5.3.1.</span> <span class="nav-text">grep：查找文件中符合条件的字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find：列出文件系统内符合条件的文件"><span class="nav-number">5.3.2.</span> <span class="nav-text">find：列出文件系统内符合条件的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate：在数据库中查找文件"><span class="nav-number">5.3.3.</span> <span class="nav-text">locate：在数据库中查找文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-系统信息显示"><span class="nav-number">5.4.</span> <span class="nav-text">4.系统信息显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#uname：显示计算机及操作系统相关信息"><span class="nav-number">5.4.1.</span> <span class="nav-text">uname：显示计算机及操作系统相关信息</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-SMP-Thu-Oct-29-17-29-29-EDT-2015-x86-64-x86-64"><span class="nav-number"></span> <span class="nav-text">1 SMP Thu Oct 29 17:29:29 EDT 2015 x86_64 x86_64</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#hostname：显示或修改计算机主机名"><span class="nav-number">0.0.1.</span> <span class="nav-text">hostname：显示或修改计算机主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#free：查看内存信息"><span class="nav-number">0.0.2.</span> <span class="nav-text">free：查看内存信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#du：显示目录或文件的磁盘占用量"><span class="nav-number">0.0.3.</span> <span class="nav-text">du：显示目录或文件的磁盘占用量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-日期和时间"><span class="nav-number">0.1.</span> <span class="nav-text">5.日期和时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cal：显示日历信息"><span class="nav-number">0.1.1.</span> <span class="nav-text">cal：显示日历信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#date：显示和设置系统日期和时间"><span class="nav-number">0.1.2.</span> <span class="nav-text">date：显示和设置系统日期和时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hwclock：查看和设置硬件时钟"><span class="nav-number">0.1.3.</span> <span class="nav-text">hwclock：查看和设置硬件时钟</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-信息交流"><span class="nav-number">0.2.</span> <span class="nav-text">6.信息交流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#echo：在显示器上显示文字"><span class="nav-number">0.2.1.</span> <span class="nav-text">echo：在显示器上显示文字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mesg：允许或拒绝写消息"><span class="nav-number">0.2.2.</span> <span class="nav-text">mesg：允许或拒绝写消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wall：对全部已登录用户发送信息"><span class="nav-number">0.2.3.</span> <span class="nav-text">wall：对全部已登录用户发送信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#write：向用户发送消息"><span class="nav-number">0.2.4.</span> <span class="nav-text">write：向用户发送消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-其他命令"><span class="nav-number">0.3.</span> <span class="nav-text">7.其他命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、Shell编程"><span class="nav-number">1.</span> <span class="nav-text">六、Shell编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟悉Shell程序的创建"><span class="nav-number">1.1.</span> <span class="nav-text">熟悉Shell程序的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法基本介绍"><span class="nav-number">1.1.1.</span> <span class="nav-text">语法基本介绍</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bin-bash。"><span class="nav-number"></span> <span class="nav-text">!&#x2F;bin&#x2F;bash。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建文件"><span class="nav-number">0.0.1.</span> <span class="nav-text">1.创建文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#！-bin-bash"><span class="nav-number"></span> <span class="nav-text">！&#x2F;bin&#x2F;bash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#filename-date"><span class="nav-number"></span> <span class="nav-text">filename:date</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-设置执行权限"><span class="nav-number">0.0.1.</span> <span class="nav-text">2.设置执行权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-执行Shell程序"><span class="nav-number">0.0.2.</span> <span class="nav-text">3.执行Shell程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-使用bash命令执行程序"><span class="nav-number">0.0.3.</span> <span class="nav-text">4.使用bash命令执行程序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell变量"><span class="nav-number">0.1.</span> <span class="nav-text">Shell变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shell定义的环境变量"><span class="nav-number">0.1.1.</span> <span class="nav-text">Shell定义的环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的Shell环境变量"><span class="nav-number">0.1.2.</span> <span class="nav-text">常用的Shell环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户定义的变量"><span class="nav-number">0.1.3.</span> <span class="nav-text">用户定义的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置参数"><span class="nav-number">0.1.4.</span> <span class="nav-text">位置参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预定义变量"><span class="nav-number">0.1.5.</span> <span class="nav-text">预定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数置换的变量"><span class="nav-number">0.1.6.</span> <span class="nav-text">参数置换的变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量表达式"><span class="nav-number">0.2.</span> <span class="nav-text">变量表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell条件判断语句"><span class="nav-number">0.3.</span> <span class="nav-text">Shell条件判断语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell循环控制语句"><span class="nav-number">0.4.</span> <span class="nav-text">Shell循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、用户和组群账户管理"><span class="nav-number">1.</span> <span class="nav-text">七、用户和组群账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户账户简介"><span class="nav-number">1.1.</span> <span class="nav-text">用户账户简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户账户分类"><span class="nav-number">1.1.1.</span> <span class="nav-text">用户账户分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1．root用户"><span class="nav-number">1.1.2.</span> <span class="nav-text">1．root用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2．系统用户"><span class="nav-number">1.1.3.</span> <span class="nav-text">2．系统用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3．普通用户"><span class="nav-number">1.1.4.</span> <span class="nav-text">3．普通用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-passwd文件"><span class="nav-number">1.1.5.</span> <span class="nav-text">&#x2F;etc&#x2F;passwd文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-passwd文件字段含义"><span class="nav-number">1.1.6.</span> <span class="nav-text">&#x2F;etc&#x2F;passwd文件字段含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-shadow文件"><span class="nav-number">1.1.7.</span> <span class="nav-text">&#x2F;etc&#x2F;shadow文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-shadow文件字段含义"><span class="nav-number">1.1.8.</span> <span class="nav-text">&#x2F;etc&#x2F;shadow文件字段含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户账户设置"><span class="nav-number">1.2.</span> <span class="nav-text">用户账户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户账户"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建用户账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改用户账户"><span class="nav-number">1.2.2.</span> <span class="nav-text">修改用户账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除用户账户"><span class="nav-number">1.2.3.</span> <span class="nav-text">删除用户账户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组群账户简介"><span class="nav-number">1.3.</span> <span class="nav-text">组群账户简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组群账户分类"><span class="nav-number">1.3.1.</span> <span class="nav-text">组群账户分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-group文件"><span class="nav-number">1.3.2.</span> <span class="nav-text">&#x2F;etc&#x2F;group文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-group文件字段含义"><span class="nav-number">1.3.3.</span> <span class="nav-text">&#x2F;etc&#x2F;group文件字段含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-gshadow文件"><span class="nav-number">1.3.4.</span> <span class="nav-text">&#x2F;etc&#x2F;gshadow文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#etc-gshadow文件字段含义"><span class="nav-number">1.3.5.</span> <span class="nav-text">&#x2F;etc&#x2F;gshadow文件字段含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组群账户设置"><span class="nav-number">1.4.</span> <span class="nav-text">组群账户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建组群账户"><span class="nav-number">1.4.1.</span> <span class="nav-text">创建组群账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改组群账户"><span class="nav-number">1.4.2.</span> <span class="nav-text">修改组群账户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除组群账户"><span class="nav-number">1.4.3.</span> <span class="nav-text">删除组群账户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户和组群账户维护"><span class="nav-number">1.5.</span> <span class="nav-text">用户和组群账户维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#passwd命令"><span class="nav-number">1.5.1.</span> <span class="nav-text">passwd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gpasswd命令"><span class="nav-number">1.5.2.</span> <span class="nav-text">gpasswd命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#su命令"><span class="nav-number">1.5.3.</span> <span class="nav-text">su命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#newgrp命令"><span class="nav-number">1.5.4.</span> <span class="nav-text">newgrp命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#groups-命令"><span class="nav-number">1.5.5.</span> <span class="nav-text">groups 命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id命令"><span class="nav-number">1.5.6.</span> <span class="nav-text">id命令</span></a></li></ol></li></ol></li></ol></div>
             
     
           </div>
@@ -2665,6 +2723,8 @@
   
 
   
+  
+
 
   
 

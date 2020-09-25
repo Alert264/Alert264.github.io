@@ -421,9 +421,7 @@
 </ul>
 <h4 id="二、下载Linux镜像文件"><a href="#二、下载Linux镜像文件" class="headerlink" title="二、下载Linux镜像文件"></a>二、下载Linux镜像文件</h4><p><a href="/download/CentOS7.zip">CentOS7.zip</a></p>
 <p>这个是CentOS7的镜像文件，也可以自己找其他镜像文件</p>
-<h4 id="三、使用LXRunOffline部署Linux到WSL"><a href="#三、使用LXRunOffline部署Linux到WSL" class="headerlink" title="三、使用LXRunOffline部署Linux到WSL"></a>三、使用LXRunOffline部署Linux到WSL</h4><p>使用管理员权限打开cmd，cd到刚刚减压LXRunOffline的文件夹，执行下面的命令</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline.exe  install -n centos -d E:\ProgramData\Microsoft\Windows\WSL\CentOS -f  E:\Progra</span><br><span class="line">mData\Microsoft\Windows\WSL\centos<span class="number">-7</span>-docker.tar.xz</span><br></pre></td></tr></table></figure>
-<p>其中 -d 后面是要安装到的目录，-f 是前面下载的镜像， -n 用来指定名称。</p>
+<h4 id="三、使用LXRunOffline部署Linux到WSL"><a href="#三、使用LXRunOffline部署Linux到WSL" class="headerlink" title="三、使用LXRunOffline部署Linux到WSL"></a>三、使用LXRunOffline部署Linux到WSL</h4><p>使用管理员权限打开cmd，cd到刚刚减压LXRunOffline的文件夹，执行下面的命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline.exe  install -n centos -d E:\ProgramData\Microsoft\Windows\WSL\CentOS -f  E:\Progra</span><br><span class="line">mData\Microsoft\Windows\WSL\centos<span class="number">-7</span>-docker.tar.xz</span><br></pre></td></tr></table></figure><br>其中 -d 后面是要安装到的目录，-f 是前面下载的镜像， -n 用来指定名称。</p>
 <h4 id="四、启动linux"><a href="#四、启动linux" class="headerlink" title="四、启动linux"></a>四、启动linux</h4><p>然后使用  LxRunOffine 来开启 Centos</p>
 <p>执行 <code>LxRunOffline  run  -n centos</code> </p>
 <p>如果想在任何位置使用LXRunOffline，只需要把该文件夹加入环境变量就行。</p>
@@ -963,6 +961,8 @@
   
 
   
+  
+
 
   
 
